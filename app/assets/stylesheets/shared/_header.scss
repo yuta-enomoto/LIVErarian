@@ -1,0 +1,61 @@
+.header {
+  height: 80px;
+  width: 100vw;
+  background-color: rgb(14, 14, 14);
+
+  &__box {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    align-items: center;
+
+    &__logo {
+
+      a{
+        font-size: 0;
+
+        .left {
+          color: $green;
+          font-size: 30px;
+        }
+
+        .right {
+          color: $wh;
+          font-size: 30px;
+        }
+      }
+    }
+
+    &__container {
+
+      &__lists {
+        display: flex;
+        
+        &__list {
+          margin: 0 0 0 50px;
+          font-size: 18.5px;
+          font-weight: bold;
+
+
+          &--line {
+            background: currentColor;
+            margin: 0 0px 0 50px;
+            color: $wh;
+            display: inline-block;
+            height: 23px;
+            width: 1px;
+          }
+
+          a {
+            color: $wh;
+            &:hover {
+              color:$green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
