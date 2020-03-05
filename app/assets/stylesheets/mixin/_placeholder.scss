@@ -1,0 +1,11 @@
+@mixin placeholder() {
+  &::placeholder {
+    color: rgb(202, 202, 202);
+  }
+}
+
+@mixin placeholder-2() {
+  &::placeholder {
+    color: rgb(219, 217, 217);
+  }
+}
