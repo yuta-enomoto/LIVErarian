@@ -1,5 +1,9 @@
 @import "./reset";
 @import "config/colors.scss";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "shared/wrapper";
 @import "shared/overall";
 @import "shared/header";
+@import "shared/sub-header";
+@import "session/session";

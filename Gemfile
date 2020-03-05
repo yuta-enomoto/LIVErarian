@@ -67,3 +67,6 @@ gem "binding_of_caller"
 gem 'bullet', group: 'development'
 gem 'pry-rails'
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'font-awesome-sass'
