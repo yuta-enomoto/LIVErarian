@@ -66,3 +66,4 @@ gem "better_errors"
 gem "binding_of_caller"
 gem 'bullet', group: 'development'
 gem 'pry-rails'
+gem 'devise'
