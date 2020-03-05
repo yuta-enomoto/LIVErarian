@@ -1,0 +1,35 @@
+.header {
+  height: 80px;
+  width: 100vw;
+  background-color: rgb(14, 14, 14);
+
+  &__box {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1170px;
+    align-items: center;
+
+    &__logo {
+
+      a{
+        font-size: 0;
+
+        .left {
+          color: $green;
+          font-size: 30px;
+        }
+
+        .right {
+          color: $wh;
+          font-size: 30px;
+        }
+      }
+    }
+
+    &__lists {
+
+    }
+  }
+}
