@@ -1,25 +1,58 @@
-%h2 新規登録
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
+.session__sns-2
+  =link_to '#', class: 'face-book'do
+    %i.fab.fa-facebook
+    FACEBOOK で登録する
+.session__sns-2.row
+  =link_to '#', class: 'google' do
+    %i.fab.fa-google
+    GOOGLE で登録する
 
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
+.session__line-3
+  %strong.session__line__or
+    または
+
+.session__text-3
+  メールアドレスで登録する。
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  -# = render "devise/shared/error_messages", resource: resource
+
+  .session__field-2
+    = f.text_field :nickname, placeholder: "ニックネーム", autofocus: true, autocomplete: "nickname", class: "form"
+    
+  .session__field-2
+    = f.email_field :email, placeholder: "Eメールアドレス", autofocus: true, autocomplete: "email", class: "form"
+
+  .session__field-2
+    = f.password_field :password, placeholder: "パスワードを設定してください。", autocomplete: "new-password", class: "form"
+
+  .session__field-2
+    = f.password_field :password_confirmation, placeholder: "パスワードを再入力してください（確認用）。", autocomplete: "new-password", class: "form"
+    
+  .session__actions
+    = f.submit "登録する", class: "register-btn"
+
+.session__go-login
+  アカウントを持っている。　→
+  = link_to new_user_session_path do
+    ログイン
+
+
+.session__line-2
+  .session__line-2__texts
+    登録する際は、LIVErarianの
+    = link_to "#" do
+      利用条件
+    および
+    = link_to "#" do
+      プライバシーポリシー
+    をご確認ください。
+    また、FacebookまたはGoogleで登録された場合においても、LIVErarianの
+    = link_to "#" do
+      利用条件
+    および
+    = link_to "#" do
+      プライバシーポリシー
+    に同意したものと見なされます。
+
+
