@@ -10,7 +10,7 @@
       %nav.header__box__container
         %ul.header__box__container__lists
           %li.header__box__container__lists__list
-            = link_to '#' do
+            = link_to root_path do
               Top
           %li.header__box__container__lists__list
             = link_to '#' do
@@ -21,11 +21,9 @@
           %li.header__box__container__lists__list--line
 
           %li.header__box__container__lists__list
-            = link_to new_user_registration_path do
-              マイページ
-          %li.header__box__container__lists__list
-            = link_to destroy_user_session_path, method: :delete, class: 'btn' do
-              ログアウト
+            = link_to users_path do
+              プロフィール
+
 
     - else
       %nav.header__box__container

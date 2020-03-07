@@ -1,0 +1,41 @@
+.account
+  .account__top
+    %h1.account__top__text
+      アカウント情報
+
+    .account__top__profile
+      %h2.account__top__profile__text-2
+        プロフィール
+
+      .account__top__profile__field
+        .account__top__profile__field__content
+          .account__top__profile__field__content__left
+            ニックネーム
+        .account__top__profile__field__content
+          .account__top__profile__field__content__right 
+            = current_user.nickname
+
+
+      .account__top__profile__field
+        .account__top__profile__field__content
+          .account__top__profile__field__content__left
+            メールアドレス
+        .account__top__profile__field__content
+          .account__top__profile__field__content__right 
+            = current_user.email
+      
+
+      .account__top__profile__field
+        .account__top__profile__field__content
+          .account__top__profile__field__content__left
+            生年月日
+        .account__top__profile__field__content
+          .account__top__profile__field__content__right 
+            = current_user.birthday
+      
+      .account__top__profile__edit
+        = link_to edit_user_path(current_user) do
+          プロフィールを編集
+
+
+    

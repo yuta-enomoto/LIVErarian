@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
-    # confirmations: 'users/confirmations'
   }
 
   root 'home#index'
+  resources :users, only: [:index, :show, :edit, :update]
 end
