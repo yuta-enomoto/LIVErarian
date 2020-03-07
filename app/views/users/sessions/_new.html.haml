@@ -1,0 +1,55 @@
+.session__text 
+  続行するにはにログインしてください。
+
+.session__sns
+  =link_to '#', class: 'face-book'do
+    %i.fab.fa-facebook
+    FACEBOOK で続ける
+.session__sns.row
+  =link_to '#', class: 'google' do
+    %i.fab.fa-google
+    GOOGLE で続ける
+
+.session__line 
+  %strong.session__line__or
+    または
+
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .session__field
+    = f.email_field :email, placeholder: "Eメールアドレス", autofocus: true, autocomplete: "email", class: "form"
+    
+  .session__field
+    = f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class: "form"
+
+  - if devise_mapping.rememberable?
+    .session__btns
+      = f.check_box :remember_me ,checked:"checked"
+      = f.label :remember_me, class:"lbl"
+      .session__actions
+        = f.submit "ログイン", class: "login-btn"
+
+.session__forget
+  -# = link_to new_user_password_path do
+  = link_to '#' do
+    パスワードをお忘れですか？
+
+.session__line 
+
+.session__text-2
+  アカウントをお持ちでない場合は
+
+.session__register
+  = link_to new_user_registration_path do
+    LIVErarianに登録する
+
+.session__line-2
+  .session__line-2__texts
+    FacebookまたはGoogleで登録された場合においても、LIVErarianの
+    = link_to "#" do
+      利用条件
+    および
+    = link_to "#" do
+      プライバシーポリシー
+    に同意したものと見なされます。
+
+

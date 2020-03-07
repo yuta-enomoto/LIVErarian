@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1160px;
     align-items: center;
 
     &__logo {
@@ -34,17 +34,17 @@
         display: flex;
         
         &__list {
-          margin: 0 0 0 50px;
-          font-size: 18.5px;
+          margin: 0 0 0 40px;
+          font-size: 17px;
           font-weight: bold;
 
 
           &--line {
             background: currentColor;
-            margin: 0 0px 0 50px;
+            margin: 4px 0px 0px 40px;
             color: $wh;
             display: inline-block;
-            height: 23px;
+            height: 16px;
             width: 1px;
           }
 

@@ -1,0 +1,25 @@
+.sub-header {
+  width: 100vw;
+  height: 110px;
+  border-bottom: 1px solid #d9dadc;
+  padding: 20px 0 10px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  a {
+    font-size: 0;
+    .left {
+      font-size: 45px;
+      color: $sub-green;
+
+    }
+    .right {
+      font-size: 50px;
+      color: black;
+    }
+  }
+
+  &__forget {
+    
+  }
+}
