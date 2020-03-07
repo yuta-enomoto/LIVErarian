@@ -70,3 +70,5 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'font-awesome-sass'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'dotenv-rails'

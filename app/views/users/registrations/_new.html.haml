@@ -28,7 +28,10 @@
 
   .session__field-2
     = f.password_field :password_confirmation, placeholder: "パスワードを再入力してください（確認用）。", autocomplete: "new-password", class: "form"
-    
+  
+  .session__recaptcha
+    = recaptcha_tags
+
   .session__actions
     = f.submit "登録する", class: "register-btn"
 
@@ -39,7 +42,7 @@
 
 
 .session__line-2
-  .session__line-2__texts
+  .session__line-2__texts-2
     登録する際は、LIVErarianの
     = link_to "#" do
       利用条件

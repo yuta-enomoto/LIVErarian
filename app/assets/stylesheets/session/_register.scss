@@ -144,6 +144,12 @@
     }
   }
 
+  &__recaptcha {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 20px;
+  }
+
   &__go-login {
     text-align: center;
     margin: 25px 0 0;
@@ -156,6 +162,22 @@
     }
   }
 
+  &__line-2 {
+    border-top: 1px solid #d9dadc;
+    display: block;
+    margin: 40px 0 0;
+
+    &__texts-2 {
+      margin: 18px 0 25px ;
+      color: #c1c3c6;
+      font-size: .94em;
+      text-align: center;
+
+      a {
+        color: $deep;
+      }
+    }
+  }
 
 
 }
