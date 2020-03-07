@@ -1,0 +1,54 @@
+.side-bar {
+  display: block;
+  width: 280px;
+  margin: 0 40px 0 0;
+
+  &__lists {
+    list-style: none;
+    background-color: #222326;
+    display: block;
+    min-width: 290px;
+
+    &__list {
+      font-size: 15px;
+      min-height: 60px;
+      display: block;
+      position: relative;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.005);
+      border-top: 1px solid rgba(0, 0, 0, 0.025);
+      border-bottom-color: rgba(0, 0, 0, 0.2);
+      border-top-color: rgba(255, 255, 255, 0.05);
+  
+      a {
+        padding: 18px 16px;
+        display: block;
+        color: #ccc;
+        font-weight: 200;
+        i {
+          margin: 0 15px 0 8px;
+          font-size: 18px;
+        }
+        i.fa-chevron-right {
+          margin: 0;
+          color: #ccc;
+          transition: all ease-out .2s;
+          font-size: 16px;
+          position: absolute;
+          top: 34%;
+          right: 20px;
+        }
+      }
+
+      &:hover {
+        a {
+          background-color: #27272b;
+          
+          i.fa-chevron-right {
+            transform: translate(5px, 0);
+            color: $hover;
+          }
+        }
+      }
+    }
+  }
+}
