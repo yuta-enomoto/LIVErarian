@@ -30,7 +30,7 @@
     = f.password_field :password_confirmation, placeholder: "パスワードを再入力してください（確認用）。", autocomplete: "new-password", class: "form"
   
   .session__field-3
-    %label.session__field-3__label 生年月日 
+    .session__field-3__label 生年月日 
     .session__field-3__birthday
       != sprintf(f.date_select(:birthday,use_month_numbers:true, prompt:"--", start_year:Time.now.year, end_year:1920, date_separator:'%s'),'年','月')+'日'
       %i.fas.fa-chevron-down.bar-1

@@ -1,0 +1,28 @@
+.edit-account
+  %h1.edit-account__text
+    プロフィールを編集
+  .edit-account__container
+    = form_for(current_user) do |f|
+      %label.session__field-2 
+        %p ニックネーム
+        = f.text_field :nickname, placeholder: "ニックネーム", autofocus: true, autocomplete: "nickname", class: "form"
+        
+      %label.session__field-2 
+        %p.mail メールアドレス
+        = f.email_field :email, placeholder: "Eメールアドレス", autofocus: true, autocomplete: "email", class: "form"
+
+      .session__field-2 
+        %p.mail 生年月日
+        .session__field-3__birthday
+          != sprintf(f.date_select(:birthday,use_month_numbers:true, prompt:"--", start_year:Time.now.year, end_year:1920, date_separator:'%s'),'年','月')+'日'
+          %i.fas.fa-chevron-down.bar-1
+          %i.fas.fa-chevron-down.bar-2
+          %i.fas.fa-chevron-down.bar-3
+
+      .edit-account__container__btns
+        = link_to users_path do
+          キャンセル
+
+        = f.submit "プロフィールを保存", class: 'upd'
+        
+
