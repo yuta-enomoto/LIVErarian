@@ -184,6 +184,8 @@
       min-width: 160px;
       text-transform: uppercase;
       white-space: normal;
+      outline: none;
+      cursor: pointer;
 
       &:hover {
         color: $wh;
