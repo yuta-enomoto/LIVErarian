@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_063849) do
+ActiveRecord::Schema.define(version: 2020_03_08_021130) do
+
+  create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "image", null: false
+    t.string "active_place", null: false
+    t.text "introduction", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_artists_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -26,4 +35,5 @@ ActiveRecord::Schema.define(version: 2020_03_05_063849) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "artists", "users"
 end
