@@ -19,7 +19,7 @@
 
       .rgst-artist__container__field.left
         %p.row アーティスト写真
-        %label.rgst-artist__container__field__label{for: 'img'}
+        %label.rgst-artist__container__field__label.border-non{for: 'img'}
           = image_tag @artist.image.url
           .rgst-artist__container__field__label__hidden
             = f.file_field :image, id: 'img', class: 'img-form'
