@@ -29,7 +29,7 @@
       - if @artist_info.present? 
         = link_to edit_artist_path(@artist_info.id) do
           %i.fas.fa-guitar
-          アーティスト情報
+          アーティスト情報を編集
           %i.fas.fa-chevron-right
       - else
         = link_to notyet_artists_path do
