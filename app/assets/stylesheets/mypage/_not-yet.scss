@@ -1,0 +1,44 @@
+.not-yet {
+  width: 860px;
+  padding: 48px;
+  background-color: white;
+
+  &__container {
+
+    &__text {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: bold;
+      margin: 0px 0 30px;
+    }
+
+    &__text-2 {
+      font-size: 17px;
+      line-height: 32px;
+      margin: 40px 0 30px;
+    }
+
+    &__box {
+      margin: 100px 0 0;
+      a {
+      padding: 15px 44px 17px;
+      color: #616467;
+      box-shadow: inset 0 0 0 2px #616467;
+      font-size: 14px;
+      border-radius: 500px;
+      transition-property: background-color,border-color,color,box-shadow,filter;
+      transition-duration: .3s;
+      border-width: 0;
+      letter-spacing: 2px;
+      min-width: 160px;
+      text-transform: uppercase;
+      white-space: normal;
+
+        &:hover {
+          color: $wh;
+          background-color: #616467;
+        }
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
 
     if current_user.artist.blank? && @artist.save
-      redirect_to users_path
+      redirect_to artist_path(:id)
     else
       render :new
     end

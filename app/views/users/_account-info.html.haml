@@ -36,4 +36,9 @@
       .account__top__profile__edit
         = link_to edit_user_path(current_user) do
           プロフィールを編集
-  = render 'artists/artist'
+
+  - if @artist_info.present? 
+    = render 'artists/artist'
+
+  -else
+    = render 'artists/not-yet'
