@@ -1,0 +1,33 @@
+.rgst-artist
+  %h1.rgst-artist__text
+    アーティスト情報を登録
+  .rgst-artist__container
+    = form_with model: @artist, local: true do |f|
+      %label.rgst-artist__container__field
+        %p アーティスト名
+        = f.text_field :name, placeholder: "アーティスト名", autofocus: true, autocomplete: "name", class: "form"
+
+      %label.rgst-artist__container__field
+        %p.row 主な活動拠点
+        = f.text_field :active_place, placeholder: "主な活動拠点", autofocus: true, autocomplete: "active_place", class: "form"
+
+
+      %label.rgst-artist__container__field
+        %p.row 紹介メッセージ
+        = f.text_area :introduction, placeholder: "例 ）　大阪を拠点に活動する３ピースガールズロックバンドです!  Gt & Vo.佐藤、　Ba.山田、　Dr.鈴木。　　　　　　　　　　　　　　　　路上ライブもやっています、よかったら来てください！！　　　あらゆる連絡はこちらまで！ →　LIVErarian.sample.com",rows: "4",autofocus: true, autocomplete: "active_place", class: "text-form"
+
+
+      .rgst-artist__container__field.left
+        %p.row アーティスト画像
+        %label.rgst-artist__container__field__label{for: 'img'}
+          %pre.rgst-artist__container__field__label__text
+            %i.fas.fa-camera
+            クリックして画像を選択
+          .rgst-artist__container__field__label__hidden
+            = f.file_field :image, id: 'img'
+
+
+      .rgst-artist__container__btns
+        = link_to users_path do
+          キャンセル
+        = f.submit "登録する", type: 'submit', class: 'btn'
