@@ -20,15 +20,13 @@
       .rgst-artist__container__field.left
         %p.row アーティスト写真
         %label.rgst-artist__container__field__label{for: 'img'}
-          %pre.rgst-artist__container__field__label__text
-            %i.fas.fa-camera
-            クリックして画像を選択
+          = image_tag @artist.image.url
           .rgst-artist__container__field__label__hidden
             = f.file_field :image, id: 'img', class: 'img-form'
 
         .rgst-artist__container__field__select
           %label.rgst-artist__container__field__select__label{for: 'img'}
-            画像を選択
+            画像を変更
 
       .rgst-artist__container__btns
         = link_to users_path do
