@@ -2,7 +2,11 @@ class ArtistsController < ApplicationController
   before_action :set_params, only: [:edit, :update]
 
   def new
-    @artist = Artist.new
+    if current_user.artist.blank?
+      @artist = Artist.new
+    else 
+      redirect_back(fallback_location: users_path)
+    end
   end
 
   def create 
