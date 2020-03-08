@@ -12,7 +12,7 @@
 
   &__container {
     margin: 20px 0 0;
-    padding: 40px;
+    padding: 40px 40px 55px;
     background-color: $wh;
     @include clearfix();
 
@@ -22,6 +22,7 @@
         color: #919496;
         font-size: 16px;
         margin: 0 0 20px;
+        position: relative;
       }
 
       p.row {
@@ -61,6 +62,41 @@
         }
       }
 
+      .preview-box {
+
+        .img-box {
+          img {
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+
+        .upd-box {
+          margin: 35px 19px 0px;
+
+          .upd-btn {
+            padding: 15px 44px 17px;
+            color: #616467;
+            box-shadow: inset 0 0 0 2px #616467;
+            font-size: 14px;
+            border-radius: 500px;
+            transition-property: background-color,border-color,color,box-shadow,filter;
+            transition-duration: .3s;
+            letter-spacing: 2px;
+            white-space: normal;
+            cursor: pointer;
+
+            &:hover {
+              color: $wh;
+              background-color: #616467;
+            }
+          }
+        }
+      }
+
       &__label {
         display: block;
         border: 1px dotted #b8b8b8;
@@ -84,6 +120,27 @@
           display: none;
         }
       }
+
+      &__select {
+        margin: 35px 19px 0px;
+        &__label {
+          padding: 15px 44px 17px;
+          color: #616467;
+          box-shadow: inset 0 0 0 2px #616467;
+          font-size: 14px;
+          border-radius: 500px;
+          transition-property: background-color,border-color,color,box-shadow,filter;
+          transition-duration: .3s;
+          letter-spacing: 2px;
+          white-space: normal;
+          cursor: pointer;
+
+          &:hover {
+            color: $wh;
+            background-color: #616467;
+          }
+        }
+      }
     }
 
     .left {
@@ -94,7 +151,7 @@
       border-top: 1px solid #d9dadc;
       float: right;
       padding: 30px 0 0;
-      margin: 170px 0 0;
+      margin: 195px 0 0;
       a {
         font-size: 14px;
         color: black;

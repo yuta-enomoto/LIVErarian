@@ -24,8 +24,10 @@
             %i.fas.fa-camera
             クリックして画像を選択
           .rgst-artist__container__field__label__hidden
-            = f.file_field :image, id: 'img'
-
+            = f.file_field :image, id: 'img', class: 'img-form'
+        .rgst-artist__container__field__select
+          %label.rgst-artist__container__field__select__label{for: 'img'}
+            画像を選択
 
       .rgst-artist__container__btns
         = link_to users_path do
