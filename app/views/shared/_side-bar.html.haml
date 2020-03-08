@@ -1,5 +1,4 @@
 %nav.side-bar
-
   %ul.side-bar__lists
     %li.side-bar__lists__list
       = link_to users_path do
@@ -27,10 +26,16 @@
         %i.fas.fa-chevron-right
       
     %li.side-bar__lists__list
-      = link_to artist_path(:id) do
-        %i.fas.fa-guitar
-        アーティスト情報
-        %i.fas.fa-chevron-right
+      - if @artist_info.present? 
+        = link_to edit_artist_path(@artist_info.id) do
+          %i.fas.fa-guitar
+          アーティスト情報
+          %i.fas.fa-chevron-right
+      - else
+        = link_to notyet_artists_path do
+          %i.fas.fa-guitar
+          アーティスト情報
+          %i.fas.fa-chevron-right
 
     %li.side-bar__lists__list
       = link_to '#' do

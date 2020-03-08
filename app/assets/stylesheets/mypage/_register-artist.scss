@@ -97,6 +97,9 @@
           }
         }
       }
+      .border-non {
+        border: none;
+      }
 
       &__label {
         display: block;
@@ -120,6 +123,14 @@
         &__hidden {
           display: none;
         }
+      }
+      img {
+        cursor: pointer;
+        display: block;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
       }
 
       &__select {
