@@ -1,6 +1,7 @@
 @import "./reset";
 @import "config/colors.scss";
 @import "mixin/placeholder";
+@import "mixin/clearfix";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "shared/wrapper";
@@ -13,3 +14,6 @@
 @import "mypage/side-bar";
 @import "mypage/account-info";
 @import "mypage/edit-account";
+@import "mypage/register-artist";
+@import "mypage/artist-info";
+@import "mypage/not-yet";

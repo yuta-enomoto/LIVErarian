@@ -72,3 +72,6 @@ gem 'devise-i18n-views'
 gem 'font-awesome-sass'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'jquery-rails'

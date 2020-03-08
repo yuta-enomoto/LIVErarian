@@ -1,0 +1,39 @@
+.artist__info
+  %h2.artist__info__text 
+    アーティスト情報
+
+  .artist__info__field
+    .artist__info__field__content
+      .artist__info__field__content__left
+        アーティスト名
+    .artist__info__field__content
+      .artist__info__field__content__right
+        = @artist_info.name
+
+  .artist__info__field
+    .artist__info__field__content
+      .artist__info__field__content__left
+        主な活動拠点
+    .artist__info__field__content
+      .artist__info__field__content__right
+        = @artist_info.active_place
+
+  .artist__info__field
+    .artist__info__field__content
+      .artist__info__field__content__left.height
+        紹介メッセージ
+    .artist__info__field__content
+      .artist__info__field__content__right.height
+        = simple_format(@artist_info.introduction)
+
+  .artist__info__field
+    .artist__info__field__content
+      .artist__info__field__content__left.height-2
+        アーティスト写真
+    .artist__info__field__content
+      .artist__info__field__content__right.height-2
+        = image_tag @artist_info.image.url
+
+  .artist__info__edit
+    = link_to '#' do
+      アーティスト情報を編集
