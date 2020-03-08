@@ -38,5 +38,8 @@ $(document).on('turbolinks:load', function(){
     $(document).on('click', '.upd-btn', function() {
       $(`input#img`).trigger('click');
     })
+    $(document).on('click', '.img-box', function() {
+      $(`input#img`).trigger('click');
+    })
   });
 });

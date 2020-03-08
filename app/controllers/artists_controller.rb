@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
   def create 
     @artist = Artist.new(artist_params)
 
-    if @artist.save
+    if current_user.artist.blank? && @artist.save
       redirect_to users_path
     else
       render :new
