@@ -1,0 +1,117 @@
+.footer {
+  padding: 80px 0 50px;
+  background: #000;
+
+  &__container {
+    margin: 0 135px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__logo {
+      min-height: 340px;
+      padding: 0 15px;
+
+      a{
+        font-size: 0;
+
+        .left {
+          color: $green;
+          font-size: 22px;
+        }
+
+        .right {
+          color: $wh;
+          font-size: 22px;
+        }
+      }
+    }
+
+    &__box {
+      width: 50%;
+      margin: 0 0 0px 40px;
+      min-height: 340px;
+      display: flex;
+
+      &__contents {
+        padding: 0 15px;
+        margin: 0;
+        flex: 1 0 0%;
+
+        &__title {
+          margin: 13px 0 20px;
+          color: #919496;
+          font-size: 12px;
+          font-weight: 900;
+          line-height: 1.4;
+          letter-spacing: .08em;
+        }
+        
+        &__content {
+          a {
+            color: $wh;
+            display: inline-block;
+            font-size: 16px;
+            padding: 3px 0 15px;
+
+            &:hover {
+              color: $hover;
+            }
+          }
+        }
+      }
+    }
+
+    &__sns {
+      margin: 0 15px 0 auto;
+
+      &__lists {
+        display: flex;
+
+        &__list {
+          padding: 11px 0px 0;
+          text-align: center;
+          margin-right: 15px;
+          width: 60px;
+          height: 60px;
+          display: inline-block;
+          border-radius: 50%;
+          background-color: #222326;
+
+          a {
+            border-radius: 50%;
+            padding: 19px;
+            font-size: 26px;
+            color: $wh;
+
+            &:hover {
+              color: $hover;
+            }
+          }
+        }
+      }
+    }
+
+    &__bottoms {
+      width: 100%;
+
+      &__lists {
+        display: flex;
+
+        &__list {
+          margin: 0 30px 0 0;
+          color: #919496;
+          font-size: 12px;
+
+          a {
+            color: #919496;
+            font-size: 12px;
+          }
+        }
+
+        .right {
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+  }
+}
