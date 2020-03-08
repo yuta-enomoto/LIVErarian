@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index]
 
   def index
+    @artist_info = current_user.artist
   end
 
   def show
