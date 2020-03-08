@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :set_params, only: [:edti, :update]
+  before_action :set_params, only: [:show, :edit, :update]
 
   def show 
     @artist_info = current_user.artist
@@ -13,20 +13,25 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
 
     if current_user.artist.blank? && @artist.save
-      redirect_to artist_path(:id)
+      redirect_to artist_path(@artist.id)
     else
       render :new
     end
   end
 
   def edit 
+    @artist_info = current_user.artist
   end
 
   def update 
     if current_user.id == @artist.user_id && @artist.update(artist_params)
+      redirect_to artist_path(@artist.id)
     else
       render :edit
     end
+  end
+
+  def notyet
   end
 
   private 

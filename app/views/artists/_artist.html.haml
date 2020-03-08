@@ -35,5 +35,5 @@
         = image_tag @artist_info.image.url
 
   .artist__info__edit
-    = link_to '#' do
+    = link_to edit_artist_path(@artist_info.id) do
       アーティスト情報を編集

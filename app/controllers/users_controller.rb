@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index]
+  before_action :set_artist, only: [:index, :edit]
 
   def index
     @artist_info = current_user.artist
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def edit 
+    @artist_info = current_user.artist
   end
 
   def update
@@ -23,6 +25,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :email,:birthday)
+  end
+
+  def set_artist 
+    @artist_info = current_user.artist
+
   end
 
 end
