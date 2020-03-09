@@ -20,9 +20,19 @@
               Post
           %li.header__box__container__lists__list--line
 
-          %li.header__box__container__lists__list
-            = link_to users_path do
-              プロフィール
+          - if @artist_info.present? 
+            %li.header__box__container__lists__list
+              = link_to users_path do
+                = image_tag @artist_info.image.url
+
+            %li.header__box__container__lists__list.profile
+              = link_to users_path do
+                プロフィール
+
+          - else
+            %li.header__box__container__lists__list
+              = link_to users_path do
+                プロフィール
 
 
     - else
