@@ -249,6 +249,10 @@
 
       a {
         color: $deep;
+
+        &:hover {
+          color: $hover;
+        }
       }
     }
   }
