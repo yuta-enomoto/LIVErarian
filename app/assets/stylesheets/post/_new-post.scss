@@ -34,7 +34,7 @@
       }
 
       .selector {
-        height: 3em;
+        height: 50px;
         width: 130px;
         background-color: white;
         border: 1px solid #d9dadc;
@@ -42,18 +42,19 @@
         -webkit-appearance: none;
         border-radius: 2px;
         text-indent: 15%;
-
+        font-size: 14px;
+        
         &:focus {
           border: 1px solid #a1a1a1;
         }
       }
 
       .venue-form {
-        height: 39px;
+        height: 50px;
         padding: 6px 12px;
         border: 1px solid #d9dadc;
         outline: none;
-        font-size: 13px;
+        font-size: 14px;
         @include placeholder();
 
         &:focus {
@@ -63,11 +64,11 @@
       }
 
       .price-form {
-        height: 39px;
+        height: 50px;
         padding: 6px 12px;
         border: 1px solid #d9dadc;
         outline: none;
-        font-size: 13px;
+        font-size: 14px;
         @include placeholder();
         
         &:focus {
@@ -208,27 +209,27 @@
     &__require-3 {
       @include require();
       left: 113px;
-      top: 271px;  
+      top: 282px;  
     }
 
     &__require-4 {
       @include require();
       left: 304px;
-      top: 271px;  
+      top: 282px;  
       background-color: #bfbfbf;
     }
 
     &__require-5 {
       @include require();
       right: 152px;
-      top: 271px;  
+      top: 282px;  
       background-color: #bfbfbf;
     }
 
     &__require-6 {
       @include require();
       left: 95px;
-      top: 385px; 
+      top: 407px; 
     }
     //==========================================================
 
@@ -242,6 +243,44 @@
 
       .not-active {
         display: none;
+      }
+    }
+
+
+    &__btns {
+      margin: 40px 0 0;
+      padding: 30px 0 0px;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid #d9dadc;
+
+      a {
+        font-size: 14px;
+        margin: 0 0 0 auto;
+        color: black;
+      }
+
+      .btn {
+        margin: 0 0 0 40px;
+        padding: 16px 70px 18px;
+        color: $wh;
+        background-color: $deep;
+        font-size: 14px;
+        line-height: 1;
+        border-radius: 500px;
+        transition-property: background-color,border-color,color,box-shadow,filter;
+        transition-duration: .3s;
+        border-width: 0;
+        letter-spacing: 2px;
+        min-width: 160px;
+        text-transform: uppercase;
+        white-space: normal;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $hover;
+        }
       }
     }
   }

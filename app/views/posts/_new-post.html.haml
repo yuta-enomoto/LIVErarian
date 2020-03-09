@@ -32,7 +32,7 @@
             = f.collection_select :form_id, Form.all, :id, :name, {prompt: "--"}, {class: 'selector active-js'}
             %i.fas.fa-chevron-down.bar-7
 
-        .form-content.not-active
+        .form-content
           %span.new-post__container__require-4 任意
           %label.new-post__container__field
             %p.row 会場名
@@ -51,3 +51,9 @@
       %label.new-post__container__field
         %p.row 最寄駅
         = f.text_field :station, placeholder: '最寄駅', class:'station-form'
+
+
+      .new-post__container__btns
+        = link_to users_path do
+          キャンセル
+        = f.submit "登録する", type: 'submit', class: 'btn'

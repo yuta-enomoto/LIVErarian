@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :notyet]
 
   def new
+    @artist_id = Post.includes(:artist).where(user_id: current_user.id)
     @artist_info = current_user.artist
     if current_user.artist.present?
       @post = Post.new
@@ -10,15 +11,23 @@ class PostsController < ApplicationController
     end
   end
 
+
   def create
-    Post.create(post_params)
+    @artist = Artist.find_by(user_id: current_user.id)
+    @post = Post.new(post_params)
+    if Post.create(post_params)
+      redirect_to users_path
+    else
+      render :new
+    end
   end
+
 
   def notyet
   end
 
   private
   def post_params
-    params.require(:post).permit(:station, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: params[:artist_id])
+    params.require(:post).permit(:station, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: @artist.id)
   end
 end

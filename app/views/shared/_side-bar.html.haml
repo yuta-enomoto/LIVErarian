@@ -45,7 +45,7 @@
     %li.bar.show-6
     %li.side-bar__lists__list
       - if @artist_info.present? 
-        = link_to new_post_path do
+        = link_to new_post_path(@artist_info.id) do
           %i.fas.fa-podcast
           LIVE情報を投稿
           %i.fas.fa-chevron-right
