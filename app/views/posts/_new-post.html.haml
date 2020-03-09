@@ -29,7 +29,7 @@
           %span.new-post__container__require-3 必須
           %label.new-post__container__field
             %p.row LIVE形式
-            = f.collection_select :form_id, Form.all, :id, :name, {prompt: "--"}, {class: 'selector'}
+            = f.collection_select :form_id, Form.all, :id, :name, {prompt: "--"}, {class: 'selector active-js'}
             %i.fas.fa-chevron-down.bar-7
 
         .form-content.not-active
