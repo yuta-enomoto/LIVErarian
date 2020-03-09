@@ -1,0 +1,19 @@
+.new-post {
+  width: 860px;
+  padding: 48px;
+  background-color: #F8F8F8;
+
+  &__text {
+    color: $deep;
+    font-size: 26px;
+    border-bottom: 1px solid #d9dadc;
+    padding: 0 0 10px;
+  }
+
+  &__container {
+    margin: 20px 0 0;
+    padding: 40px 40px 55px;
+    background-color: $wh;
+
+  }
+}
