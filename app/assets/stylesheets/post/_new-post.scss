@@ -76,6 +76,13 @@
         }
       }
 
+      .yen {
+        position: absolute;
+        right: -30px;
+        bottom: -5px;
+        font-size: 16px;
+      }
+
       .bar-6 {
         position: absolute;
         font-size: 17px;
@@ -191,14 +198,14 @@
 
     &__require-4 {
       @include require();
-      left: 322px;
+      left: 304px;
       top: 271px;  
       background-color: #bfbfbf;
     }
 
     &__require-5 {
       @include require();
-      right: 114px;
+      right: 152px;
       top: 271px;  
       background-color: #bfbfbf;
     }
@@ -209,7 +216,7 @@
       display: flex;
 
       .form-content {
-        margin: 0 100px 0 0;
+        margin: 0 80px 0 0;
       }
 
       .not-active {
