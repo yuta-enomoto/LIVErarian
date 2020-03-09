@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :show, :edit, :update]
+  before_action :authenticate_user!, only: [:index, :edit, :update]
   before_action :set_artist, only: [:index, :edit, :update]
 
   def index
-  end
-
-  def show
   end
 
   def edit 
