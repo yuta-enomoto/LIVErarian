@@ -1,6 +1,13 @@
 $(document).on('turbolinks:load', function(){
   $(function(){
 
+    //関数を定義==============================================
+    function show_5() {
+      $('.show-5').css("display", "block")
+    }
+    //======================================================
+
+
     if (window.location.href.match(/\/users/)){
       $('.show-1').css("display", "block")
     }
@@ -11,7 +18,15 @@ $(document).on('turbolinks:load', function(){
     }
 
     if (window.location.href.match(/\/artists\/\d+\/edit/)){
-      $('.show-5').css("display", "block")
+      show_5()
+    }
+
+    if (window.location.href.match(/\/artists\/notyet/)){
+      show_5()
+    }
+
+    if (window.location.href.match(/\/artists\/new/)){
+      show_5()
     }
 
   });
