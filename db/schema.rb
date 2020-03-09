@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2020_03_09_093243) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "fee"
-    t.string "station"
-    t.string "venue"
+    t.string "station", null: false
+    t.string "venue", null: false
     t.datetime "date_time", null: false
     t.boolean "status", default: true, null: false
     t.integer "form_id", null: false
