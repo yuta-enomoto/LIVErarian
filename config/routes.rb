@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'posts/new'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -13,4 +12,5 @@ Rails.application.routes.draw do
       get 'notyet' 
     end
   end
+  resources :posts, only: [:new, :create] do
 end
