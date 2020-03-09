@@ -14,17 +14,93 @@
     margin: 20px 0 0;
     padding: 40px 40px 55px;
     background-color: $wh;
-
-
+    position: relative;
+    
     &__field {
       position: relative;
       color: #b8b8b8;
+
       p {
         color: #919496;
         font-size: 16px;
         margin: 0 0 20px;
         position: relative;
       }
+
+      p.row {
+        color: #919496;
+        font-size: 16px;
+        margin: 32px 0 20px;
+      }
+
+      .selector {
+        height: 3em;
+        width: 130px;
+        background-color: white;
+        border: 1px solid #d9dadc;
+        outline: none;
+        -webkit-appearance: none;
+        border-radius: 2px;
+        text-indent: 15%;
+
+        &:focus {
+          border: 1px solid #a1a1a1;
+        }
+      }
+
+      .venue-form {
+        height: 39px;
+        padding: 6px 12px;
+        border: 1px solid #d9dadc;
+        outline: none;
+        font-size: 13px;
+        margin: 0 0 12px;
+        @include placeholder();
+
+        &:focus {
+          border: 1px solid #a1a1a1;
+          @include placeholder-2();     
+        }
+      }
+
+      .price-form {
+        height: 39px;
+        padding: 6px 12px;
+        border: 1px solid #d9dadc;
+        outline: none;
+        font-size: 13px;
+        margin: 0 0 12px;
+        @include placeholder();
+        
+        &:focus {
+          border: 1px solid #a1a1a1;
+          @include placeholder-2();     
+        }
+      }
+
+      .bar-6 {
+        position: absolute;
+        font-size: 17px;
+        right: 542px;
+      }
+      .bar-7 {
+        position: absolute;
+        font-size: 17px;
+        left: 103px;
+      }
+      .bar-8 {
+        position: absolute;
+        font-size: 17px;
+        left: 103px;
+      }
+      .bar-9 {
+        position: absolute;
+        font-size: 17px;
+        left: 103px;
+      }
+
+
+
       //日時フォーム==============================================
       .date-form {
         height: 3em;
@@ -94,6 +170,53 @@
         right: 71px;
       }
       //==========================================================
+    }
+
+    //必須表示======================================================
+    &__require {
+      @include require();
+      left: 147px;
+      top: 43px;
+    }
+
+    &__require-2 {
+      @include require();
+      left: 147px;
+      top: 157px;
+    }
+
+    &__require-3 {
+      @include require();
+      left: 113px;
+      top: 271px;  
+    }
+
+    &__require-4 {
+      @include require();
+      left: 322px;
+      top: 271px;  
+      background-color: #bfbfbf;
+    }
+
+    &__require-5 {
+      @include require();
+      right: 114px;
+      top: 271px;  
+      background-color: #bfbfbf;
+    }
+    //==========================================================
+
+
+    .form-box {
+      display: flex;
+
+      .form-content {
+        margin: 0 100px 0 0;
+      }
+
+      .not-active {
+        display: none;
+      }
     }
   }
 }
