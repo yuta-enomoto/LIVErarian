@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'posts/new'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
