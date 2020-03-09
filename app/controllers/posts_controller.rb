@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def create
     @artist = Artist.find_by(user_id: current_user.id)
     @post = Post.new(post_params)
-    if Post.create(post_params)
+    if @post.save
       redirect_to users_path
     else
       render :new
