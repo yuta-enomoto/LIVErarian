@@ -3,4 +3,57 @@
     LIVE情報を投稿
 
   .new-post__container
-    
+    = form_with model: @post, local: true do |f|
+      %span.new-post__container__require 必須
+      %label.new-post__container__field
+        %p LIVE予定日時
+        =f.datetime_select :date_time, {}, class: 'date-form'
+        %i.fas.fa-chevron-down.bar-1
+        %i.fas.fa-chevron-down.bar-2
+        %i.fas.fa-chevron-down.bar-3
+        %i.fas.fa-chevron-down.bar-4
+        %i.fas.fa-chevron-down.bar-5
+        %n.year 年
+        %n.date 日
+        %n.hour 時
+        %n.minute 分
+      
+      %span.new-post__container__require-2 必須
+      %label.new-post__container__field
+        %p.row LIVE予定時間
+        = f.collection_select :how_long_id, HowLong.all, :id, :name, {prompt: "--"}, {class: 'selector'}
+        %i.fas.fa-chevron-down.bar-6
+
+      .form-box
+        .form-content
+          %span.new-post__container__require-3 必須
+          %label.new-post__container__field
+            %p.row LIVE形式
+            = f.collection_select :form_id, Form.all, :id, :name, {prompt: "--"}, {class: 'selector active-js'}
+            %i.fas.fa-chevron-down.bar-7
+
+        .form-content
+          %span.new-post__container__require-4 必須
+          %label.new-post__container__field
+            %p.row 会場名
+            = f.text_field :venue, placeholder: '会場名', class:'venue-form'
+
+
+        .form-content.not-active
+          %span.new-post__container__require-5 任意
+          %label.new-post__container__field
+            %p.row 入場料金
+            = f.text_field :fee,type: 'number', placeholder: '入場料金', class:'price-form'
+            %span.yen 円
+
+
+      %span.new-post__container__require-6 必須
+      %label.new-post__container__field
+        %p.row 最寄駅
+        = f.text_field :station, placeholder: '最寄駅', class:'station-form'
+
+
+      .new-post__container__btns
+        = link_to users_path do
+          キャンセル
+        = f.submit "投稿する", type: 'submit', class: 'btn'

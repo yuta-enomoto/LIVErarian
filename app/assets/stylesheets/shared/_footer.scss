@@ -105,6 +105,10 @@
           a {
             color: #919496;
             font-size: 12px;
+
+            &:hover {
+              color: $hover;
+            }
           }
         }
 

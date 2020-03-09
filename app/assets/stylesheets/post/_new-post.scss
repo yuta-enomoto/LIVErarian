@@ -14,6 +14,273 @@
     margin: 20px 0 0;
     padding: 40px 40px 55px;
     background-color: $wh;
+    position: relative;
+    
+    &__field {
+      position: relative;
+      color: #b8b8b8;
 
+      p {
+        color: #919496;
+        font-size: 16px;
+        margin: 0 0 20px;
+        position: relative;
+      }
+
+      p.row {
+        color: #919496;
+        font-size: 16px;
+        margin: 32px 0 20px;
+      }
+
+      .selector {
+        height: 50px;
+        width: 130px;
+        background-color: white;
+        border: 1px solid #d9dadc;
+        outline: none;
+        -webkit-appearance: none;
+        border-radius: 2px;
+        text-indent: 10%;
+        font-size: 14px;
+        
+        &:focus {
+          border: 1px solid #a1a1a1;
+        }
+      }
+
+      .venue-form {
+        height: 50px;
+        padding: 6px 12px;
+        border: 1px solid #d9dadc;
+        outline: none;
+        font-size: 14px;
+        @include placeholder();
+
+        &:focus {
+          border: 1px solid #a1a1a1;
+          @include placeholder-2();     
+        }
+      }
+
+      .price-form {
+        height: 50px;
+        padding: 6px 12px;
+        border: 1px solid #d9dadc;
+        outline: none;
+        font-size: 14px;
+        @include placeholder();
+        
+        &:focus {
+          border: 1px solid #a1a1a1;
+          @include placeholder-2();     
+        }
+      }
+
+      .station-form {
+        width: 100%;
+        height: 50px;
+        padding: 6px 12px;
+        border: 1px solid #d9dadc;
+        outline: none;
+        font-size: 14px;
+        @include placeholder();
+
+        &:focus {
+          border: 1px solid #a1a1a1;
+          @include placeholder-2();     
+        }
+      }
+
+      .yen {
+        position: absolute;
+        right: -30px;
+        bottom: -5px;
+        font-size: 16px;
+      }
+
+      .bar-6 {
+        position: absolute;
+        font-size: 17px;
+        right: 542px;
+      }
+      .bar-7 {
+        position: absolute;
+        font-size: 17px;
+        left: 103px;
+      }
+      .bar-8 {
+        position: absolute;
+        font-size: 17px;
+        left: 103px;
+      }
+      .bar-9 {
+        position: absolute;
+        font-size: 17px;
+        left: 103px;
+      }
+
+
+
+      //日時フォーム==============================================
+      .date-form {
+        height: 3em;
+        width: 110px;
+        background-color: white;
+        border: 1px solid #d9dadc;
+        outline: none;
+        -webkit-appearance: none;
+        border-radius: 2px;
+        text-indent: 15%;
+
+        &:focus {
+          border: 1px solid #a1a1a1;
+        }
+      }
+
+      #post_date_time_1i {
+        margin: 0 10px 0 0;
+      }
+      #post_date_time_2i {
+        margin: 0 10px 0 0;
+      }
+      #post_date_time_3i {
+        margin: 0 10px 0 0;
+      }
+      #post_date_time_4i {
+        margin: 0 10px 0 10px;
+      }
+      #post_date_time_5i {
+        margin: 0 10px 0 10px;
+      }
+      .fa-chevron-down {
+        position: absolute;
+        bottom: 0px;
+      }
+      .bar-1 {
+        left: 85px;
+      }
+      .bar-2 {
+        left: 209px;
+      }
+      .bar-3 {
+        left: 331px;
+      }
+      .bar-4 {
+        right: 164px;
+      }
+      .bar-5 {
+        right: 22px;
+      }
+
+      n {
+        color: black;
+        position: absolute;
+        bottom: -1px;
+      }
+      .year {
+        left: 55px
+      }
+      .date {
+        left: 282px;
+      }
+      .hour {
+        right: 212px;
+      }
+      .minute {
+        right: 71px;
+      }
+      //==========================================================
+    }
+
+    //必須表示======================================================
+    &__require {
+      @include require();
+      left: 147px;
+      top: 43px;
+    }
+
+    &__require-2 {
+      @include require();
+      left: 147px;
+      top: 157px;
+    }
+
+    &__require-3 {
+      @include require();
+      left: 113px;
+      top: 282px;  
+    }
+
+    &__require-4 {
+      @include require();
+      left: 304px;
+      top: 282px;  
+    }
+
+    &__require-5 {
+      @include require();
+      right: 152px;
+      top: 282px;  
+      background-color: #bfbfbf;
+    }
+
+    &__require-6 {
+      @include require();
+      left: 95px;
+      top: 407px; 
+    }
+    //==========================================================
+
+
+    .form-box {
+      display: flex;
+
+      .form-content {
+        margin: 0 80px 0 0;
+      }
+
+      .not-active {
+        display: none;
+      }
+    }
+
+
+    &__btns {
+      margin: 40px 0 0;
+      padding: 30px 0 0px;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid #d9dadc;
+
+      a {
+        font-size: 14px;
+        margin: 0 0 0 auto;
+        color: black;
+      }
+
+      .btn {
+        margin: 0 0 0 40px;
+        padding: 16px 70px 18px;
+        color: $wh;
+        background-color: $deep;
+        font-size: 14px;
+        line-height: 1;
+        border-radius: 500px;
+        transition-property: background-color,border-color,color,box-shadow,filter;
+        transition-duration: .3s;
+        border-width: 0;
+        letter-spacing: 2px;
+        min-width: 160px;
+        text-transform: uppercase;
+        white-space: normal;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $hover;
+        }
+      }
+    }
   }
 }

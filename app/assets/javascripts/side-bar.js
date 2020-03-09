@@ -2,6 +2,15 @@ $(document).on('turbolinks:load', function(){
   $(function(){
 
     //関数を定義================================================
+    function show_1() {
+      $('.show-1').css("display", "block")
+    }
+
+    function show_2() {
+      $('.show-1').css("display", "none")
+      $('.show-2').css("display", "block")
+    }
+
     function show_5() {
       $('.show-5').css("display", "block")
     }
@@ -11,18 +20,26 @@ $(document).on('turbolinks:load', function(){
     }
     //========================================================
 
-
     if (window.location.href.match(/\/users/)){
-      $('.show-1').css("display", "block")
+      show_1()
     }
 
+    //=========================================================
+
     if (window.location.href.match(/\/users\/\d+\/edit/)){
-      $('.show-1').css("display", "none")
-      $('.show-2').css("display", "block")
+      show_2()
+    }
+
+    if (window.location.href.match(/\/users\/\d+/)){
+      show_2()
     }
 
     //=========================================================
     if (window.location.href.match(/\/artists\/\d+\/edit/)){
+      show_5()
+    }
+
+    if (window.location.href.match(/\/artists\/\d+/)){
       show_5()
     }
 
@@ -35,6 +52,10 @@ $(document).on('turbolinks:load', function(){
     }
 
     //=========================================================
+    if (window.location.href.match(/\/posts/)){
+      show_6()
+    }
+
     if (window.location.href.match(/\/posts\/new/)){
       show_6()
     }

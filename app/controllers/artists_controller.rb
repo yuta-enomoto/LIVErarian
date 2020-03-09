@@ -1,5 +1,8 @@
 class ArtistsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :notyet]
   before_action :set_params, only: [:edit, :update]
+  before_action :set_artist, only: [:index, :edit, :update]
+
 
   def new
     if current_user.artist.blank?
@@ -20,7 +23,6 @@ class ArtistsController < ApplicationController
   end
 
   def edit 
-    @artist_info = current_user.artist
   end
 
   def update 
@@ -34,6 +36,7 @@ class ArtistsController < ApplicationController
   def notyet
   end
 
+  
   private 
 
   def artist_params
@@ -43,4 +46,9 @@ class ArtistsController < ApplicationController
   def set_params 
     @artist = Artist.find(params[:id])
   end
+
+  def set_artist 
+    @artist_info = current_user.artist
+  end
+
 end
