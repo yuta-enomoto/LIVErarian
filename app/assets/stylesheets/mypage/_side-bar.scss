@@ -10,6 +10,7 @@
     background-color: #222326;
     display: block;
     min-width: 290px;
+    position: relative;
 
     &__list {
       font-size: 15px;
@@ -51,6 +52,16 @@
           }
         }
       }
+    }
+
+    .bar {
+      background: currentColor;
+      color: #4bc84b;
+      height: 58px;
+      width: 8px;
+      position: absolute;
+      display: none;
+      z-index: 100;
     }
   }
 }

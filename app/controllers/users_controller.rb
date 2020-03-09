@@ -3,14 +3,12 @@ class UsersController < ApplicationController
   before_action :set_artist, only: [:index, :edit]
 
   def index
-    @artist_info = current_user.artist
   end
 
   def show
   end
 
   def edit 
-    @artist_info = current_user.artist
   end
 
   def update
@@ -29,7 +27,6 @@ class UsersController < ApplicationController
 
   def set_artist 
     @artist_info = current_user.artist
-
   end
 
 end
