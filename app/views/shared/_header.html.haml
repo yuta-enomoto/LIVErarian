@@ -16,8 +16,13 @@
             = link_to '#' do
               Find
           %li.header__box__container__lists__list
-            = link_to new_post_path do
-              Post
+            - if @artist_info.present? 
+              = link_to new_post_path do
+                Post
+            - else
+              = link_to notyet_posts_path do
+                Post
+
           %li.header__box__container__lists__list--line
 
           - if @artist_info.present? 
