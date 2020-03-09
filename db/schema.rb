@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_024115) do
+ActiveRecord::Schema.define(version: 2020_03_09_093243) do
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 2020_03_08_024115) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_artists_on_user_id"
+  end
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "fee"
+    t.string "station"
+    t.string "venue"
+    t.datetime "date_time", null: false
+    t.boolean "status", default: true, null: false
+    t.integer "form_id", null: false
+    t.integer "how_long_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_posts_on_artist_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,4 +54,6 @@ ActiveRecord::Schema.define(version: 2020_03_08_024115) do
   end
 
   add_foreign_key "artists", "users"
+  add_foreign_key "posts", "artists"
+  add_foreign_key "posts", "users"
 end
