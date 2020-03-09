@@ -11,9 +11,14 @@ class PostsController < ApplicationController
   end
 
   def create
+    Post.create(post_params)
   end
 
   def notyet
   end
 
+  private
+  def post_params
+    params.require(:post).permit(:station, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: params[:artist_id])
+  end
 end

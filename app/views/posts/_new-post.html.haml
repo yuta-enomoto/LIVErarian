@@ -3,4 +3,17 @@
     LIVE情報を投稿
 
   .new-post__container
-    
+    = form_with model: @post, local: true do |f|
+      %label.new-post__container__field
+        %p LIVE予定日時
+        =f.datetime_select :date_time, {}, class: 'date-form'
+        %i.fas.fa-chevron-down.bar-1
+        %i.fas.fa-chevron-down.bar-2
+        %i.fas.fa-chevron-down.bar-3
+        %i.fas.fa-chevron-down.bar-4
+        %i.fas.fa-chevron-down.bar-5
+        %n.year 年
+        %n.date 日
+        %n.hour 時
+        %n.minute 分
+

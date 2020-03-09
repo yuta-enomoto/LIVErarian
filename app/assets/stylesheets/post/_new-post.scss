@@ -15,5 +15,85 @@
     padding: 40px 40px 55px;
     background-color: $wh;
 
+
+    &__field {
+      position: relative;
+      color: #b8b8b8;
+      p {
+        color: #919496;
+        font-size: 16px;
+        margin: 0 0 20px;
+        position: relative;
+      }
+      //日時フォーム==============================================
+      .date-form {
+        height: 3em;
+        width: 110px;
+        background-color: white;
+        border: 1px solid #d9dadc;
+        outline: none;
+        -webkit-appearance: none;
+        border-radius: 2px;
+        text-indent: 15%;
+
+        &:focus {
+          border: 1px solid #a1a1a1;
+        }
+      }
+
+      #post_date_time_1i {
+        margin: 0 10px 0 0;
+      }
+      #post_date_time_2i {
+        margin: 0 10px 0 0;
+      }
+      #post_date_time_3i {
+        margin: 0 10px 0 0;
+      }
+      #post_date_time_4i {
+        margin: 0 10px 0 10px;
+      }
+      #post_date_time_5i {
+        margin: 0 10px 0 10px;
+      }
+      .fa-chevron-down {
+        position: absolute;
+        bottom: 0px;
+      }
+      .bar-1 {
+        left: 85px;
+      }
+      .bar-2 {
+        left: 209px;
+      }
+      .bar-3 {
+        left: 331px;
+      }
+      .bar-4 {
+        right: 164px;
+      }
+      .bar-5 {
+        right: 22px;
+      }
+
+      n {
+        color: black;
+        position: absolute;
+        bottom: -1px;
+      }
+      .year {
+        left: 55px
+      }
+      .date {
+        left: 282px;
+      }
+      .hour {
+        right: 212px;
+      }
+      .minute {
+        right: 71px;
+      }
+      //==========================================================
+    }
   }
 }
