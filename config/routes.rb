@@ -12,5 +12,5 @@ Rails.application.routes.draw do
       get 'notyet' 
     end
   end
-  resources :posts, only: [:new, :create] do
+  resources :posts, only: [:new, :create]
 end

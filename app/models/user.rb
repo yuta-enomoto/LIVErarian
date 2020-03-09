@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :artist
+  has_many :posts
 
 
   validates :nickname, :birthday, presence: true
