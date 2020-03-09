@@ -29,5 +29,9 @@ $(document).on('turbolinks:load', function(){
       show_5()
     }
 
+    if (window.location.href.match(/\/posts\/new/)){
+      $('.show-6').css("display", "block")
+    }
+
   });
 });
