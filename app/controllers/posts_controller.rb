@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :notyet]
 
   def new
-    @artist_id = Post.includes(:artist).where(user_id: current_user.id)
     @artist_info = current_user.artist
     if current_user.artist.present?
       @post = Post.new
