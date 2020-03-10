@@ -73,5 +73,9 @@ $(document).on('turbolinks:load', function(){
     if (window.location.href.match(/\/live_yet/)){
       show_7()
     }
+
+    if (window.location.href.match(/\/not_yet/)){
+      show_7()
+    }
   });
 });

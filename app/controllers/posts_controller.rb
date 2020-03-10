@@ -21,12 +21,15 @@ class PostsController < ApplicationController
     end
   end
 
-  
+
   def live_yet
   end
 
 
   def notyet
+  end
+
+  def not_yet
   end
 
   private
