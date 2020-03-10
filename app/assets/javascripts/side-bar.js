@@ -18,6 +18,11 @@ $(document).on('turbolinks:load', function(){
     function show_6() {
       $('.show-6').css("display", "block")
     }
+
+    function show_7() {
+      $('.show-6').css("display", "none")
+      $('.show-7').css("display", "block")
+    }
     //========================================================
 
     if (window.location.href.match(/\/users/)){
@@ -62,6 +67,11 @@ $(document).on('turbolinks:load', function(){
 
     if (window.location.href.match(/\/posts\/notyet/)){
       show_6()
+    }
+
+    //=========================================================
+    if (window.location.href.match(/\/live_yet/)){
+      show_7()
     }
   });
 });

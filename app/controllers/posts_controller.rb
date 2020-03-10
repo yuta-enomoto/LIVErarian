@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :notyet]
-  before_action :set_artist, only: [:new, :create]
+  before_action :authenticate_user!, only: [:index, :new, :create, :notyet]
+  before_action :set_artist, only: [:new, :create ,:live_yet]
 
   def new
     if current_user.artist.present?
@@ -19,6 +19,10 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  
+  def live_yet
   end
 
 
