@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', function(){
 
     function show_8() {
       $('.show-6').css("display", "none")
+      $('.show-7').css("display", "none")
       $('.show-8').css("display", "block")
     }
     //========================================================
@@ -83,12 +84,21 @@ $(document).on('turbolinks:load', function(){
       show_7()
     }
 
+    if (window.location.href.match(/\/posts\/\d+/)){
+      show_7()
+    }
+
     //=========================================================
     if (window.location.href.match(/\/posts\/done/)){
       show_8()
     }
     if (window.location.href.match(/\/posts\/yet/)){
       show_8()
+    }
+
+    if (window.location.href.match(/\/posts\/\d+\/done_show/)){
+      show_8()
+
     }
   });
 });

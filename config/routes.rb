@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     end
   end
   resources :posts, only: [:show, :new, :create] do
+    member do
+      get 'done_show'
+    end
     collection do
       get 'live_yet'
       get 'notyet' 

@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :live_yet, :notyet]
-  before_action :set_artist, only: [:show, :new, :create ,:live_yet, :done]
-  before_action :set_post, only: [:show]
+  before_action :set_artist, only: [:show, :done_show, :new, :create ,:live_yet, :done]
+  before_action :set_post, only: [:show, :done_show]
   before_action :status_change, only: [:live_yet, :done]
 
   def show
+  end
+
+  def done_show
   end
 
   def new
