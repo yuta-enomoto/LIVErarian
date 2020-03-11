@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
 
   def done
-    @posts = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC")
+    @dones = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC")
   end
 
 

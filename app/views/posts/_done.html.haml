@@ -1,0 +1,19 @@
+.done
+  .done__top
+    %h1.done__top__text
+      過去に開催したLIVE
+  
+  .done__main
+    - if  @dones.present?
+      = render partial: 'shared/done', collection: @dones
+
+    - else
+      .done__main__yet
+        %h2.done__main__yet__text
+          過去に開催したLIVEはありません。
+        
+        .done__main__yet__box
+          = link_to new_post_path do
+            LIVE情報を投稿
+
+  
