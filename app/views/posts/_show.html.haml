@@ -1,10 +1,78 @@
+.show-live
+  %h1.show-live__text
+    LIVE情報
+
+  .show-live__info
+    .show-live__info__field
+      .show-live__info__field__content
+        .show-live__info__field__content__left
+          - if @post.status == true
+            LIVE予定日時
+          - else 
+            LIVEを開催した日時
+      .show-live__info__field__content
+        .show-live__info__field__content__right
+          = @post.date_time.strftime("%Y年%-m月%-d日 %-H時%-M分")
 
 
+    .show-live__info__field
+      .show-live__info__field__content
+        .show-live__info__field__content__left
+          - if @post.status == true
+            LIVE予定時間
+          - else 
+            LIVE時間
+      .show-live__info__field__content
+        .show-live__info__field__content__right
+          = @post.how_long.name
 
 
+    .show-live__info__field
+      .show-live__info__field__content
+        .show-live__info__field__content__left
+          LIVE形式
+      .show-live__info__field__content
+        .show-live__info__field__content__right
+          = @post.form.name
 
 
+    .show-live__info__field
+      .show-live__info__field__content
+        .show-live__info__field__content__left
+          会場名
+      .show-live__info__field__content
+        .show-live__info__field__content__right
+          = @post.venue
+
+    - if @post.fee.present?
+      .show-live__info__field
+        .show-live__info__field__content
+          .show-live__info__field__content__left
+            入場料金
+        .show-live__info__field__content
+          .show-live__info__field__content__right
+            = @post.fee
+            円
 
 
+    .show-live__info__field
+      .show-live__info__field__content
+        .show-live__info__field__content__left
+          最寄駅
+      .show-live__info__field__content
+        .show-live__info__field__content__right
+          = @post.station
+    
 
-= @post.station
+    .show-live__info__btns
+      - if @post.status == true
+        .show-live__info__btns__btn
+          = link_to '#' do
+            LIVE情報を編集
+
+      .show-live__info__btns__btn.delete
+        投稿を削除
+
+      - if @post.status == true
+        .show-live__info__btns__btn.delete
+          LIVEを中止する
