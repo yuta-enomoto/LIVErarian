@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create, :live_yet, :notyet]
   before_action :set_artist, only: [:new, :create ,:live_yet, :done]
+  before_action :status_change, only: [:live_yet]
 
   def new
     if current_user.artist.present?
@@ -23,7 +24,18 @@ class PostsController < ApplicationController
 
 
   def live_yet
+    @status = Post.find_by(user_id: current_user.id, status: '1')
+    @time = Time.now.to_s(:db)
+    if @status.present?
+      if @status.date_time < @time
+        @status.status = false
+        @status.save
+      else
+      end
+    end
+    
     @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC")
+    
   end
 
 
@@ -45,11 +57,27 @@ class PostsController < ApplicationController
 
 
   private
+
   def post_params
     params.require(:post).permit(:station, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: @artist.id)
   end
 
+
   def set_artist
     @artist_info = current_user.artist
   end
+
+
+  def status_change 
+    @status = Post.find_by(user_id: current_user.id, status: '1')
+    @time = Time.now.to_s(:db)
+    if @status.present?
+      if @status.date_time < @time
+        @status.status = false
+        @status.save
+      end
+    end
+  end
+
+  
 end
