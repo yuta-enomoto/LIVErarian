@@ -52,6 +52,37 @@
           }
         }
       }
+
+      &__logout {
+        padding: 18px 16px;
+        display: block;
+        color: #ccc;
+        font-weight: 200;
+        i {
+          margin: 0 15px 0 8px;
+          font-size: 18px;
+        }
+        i.fa-chevron-right {
+          margin: 0;
+          color: #ccc;
+          transition: all ease-out .2s;
+          font-size: 16px;
+          position: absolute;
+          top: 34%;
+          right: 20px;
+        }
+      }
+
+      &:hover {
+        .side-bar__lists__list__logout {
+          background-color: #27272b;
+          
+          i.fa-chevron-right {
+            transform: translate(5px, 0);
+            color: $hover;
+          }
+        }
+      }
     }
 
     .bar {
