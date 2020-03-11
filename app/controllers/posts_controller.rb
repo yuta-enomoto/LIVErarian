@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create, :live_yet, :notyet]
   before_action :set_artist, only: [:new, :create ,:live_yet, :done]
-  before_action :status_change, only: [:live_yet]
+  before_action :status_change, only: [:live_yet, :done]
 
   def new
     if current_user.artist.present?
@@ -23,19 +23,8 @@ class PostsController < ApplicationController
   end
 
 
-  def live_yet
-    @status = Post.find_by(user_id: current_user.id, status: '1')
-    @time = Time.now.to_s(:db)
-    if @status.present?
-      if @status.date_time < @time
-        @status.status = false
-        @status.save
-      else
-      end
-    end
-    
+  def live_yet    
     @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC")
-    
   end
 
 
@@ -69,15 +58,15 @@ class PostsController < ApplicationController
 
 
   def status_change 
-    @status = Post.find_by(user_id: current_user.id, status: '1')
-    @time = Time.now.to_s(:db)
+    @status = Post.order(date_time: "ASC").find_by(user_id: current_user.id, status: '1')
+    @time = DateTime.now.to_s(:db)
     if @status.present?
       if @status.date_time < @time
-        @status.status = false
+        @status.status = '0'
         @status.save
       end
     end
   end
 
-  
+
 end
