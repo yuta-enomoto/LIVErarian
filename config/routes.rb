@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     collection do
       get 'live_yet'
       get 'notyet' 
+      get 'done'
       get 'not_yet' 
+      get 'yet'
     end
   end
 end

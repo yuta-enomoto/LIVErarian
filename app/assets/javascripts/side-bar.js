@@ -23,6 +23,11 @@ $(document).on('turbolinks:load', function(){
       $('.show-6').css("display", "none")
       $('.show-7').css("display", "block")
     }
+
+    function show_8() {
+      $('.show-6').css("display", "none")
+      $('.show-8').css("display", "block")
+    }
     //========================================================
 
     if (window.location.href.match(/\/users/)){
@@ -76,6 +81,14 @@ $(document).on('turbolinks:load', function(){
 
     if (window.location.href.match(/\/not_yet/)){
       show_7()
+    }
+
+    //=========================================================
+    if (window.location.href.match(/\/posts\/done/)){
+      show_8()
+    }
+    if (window.location.href.match(/\/posts\/yet/)){
+      show_8()
     }
   });
 });
