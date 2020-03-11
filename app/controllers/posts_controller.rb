@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create, :live_yet, :notyet]
-  before_action :set_artist, only: [:new, :create ,:live_yet]
+  before_action :set_artist, only: [:new, :create ,:live_yet, :done]
 
   def new
     if current_user.artist.present?
@@ -27,11 +27,22 @@ class PostsController < ApplicationController
   end
 
 
+  def done
+    @posts = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC")
+  end
+
+
   def notyet
   end
 
+
   def not_yet
   end
+
+
+  def yet
+  end
+
 
   private
   def post_params
