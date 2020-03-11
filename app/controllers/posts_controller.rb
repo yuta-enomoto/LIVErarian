@@ -73,7 +73,7 @@ class PostsController < ApplicationController
     @status = Post.order(date_time: "ASC").find_by(user_id: current_user.id, status: '1')
     @time = DateTime.now.to_s(:db)
     if @status.present?
-      if @status.date_time + 9.hour < @time
+      if @status.date_time < @time
         @status.status = '0'
         @status.save
       end
