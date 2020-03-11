@@ -1,7 +1,14 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :live_yet, :notyet]
-  before_action :set_artist, only: [:new, :create ,:live_yet, :done]
+  before_action :authenticate_user!, only: [:show, :new, :create, :live_yet, :notyet]
+  before_action :set_artist, only: [:show, :done_show, :new, :create ,:live_yet, :done]
+  before_action :set_post, only: [:show, :done_show]
   before_action :status_change, only: [:live_yet, :done]
+
+  def show
+  end
+
+  def done_show
+  end
 
   def new
     if current_user.artist.present?
@@ -57,11 +64,16 @@ class PostsController < ApplicationController
   end
 
 
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+
   def status_change 
     @status = Post.order(date_time: "ASC").find_by(user_id: current_user.id, status: '1')
     @time = DateTime.now.to_s(:db)
     if @status.present?
-      if @status.date_time < @time
+      if @status.date_time + 9.hour < @time
         @status.status = '0'
         @status.save
       end

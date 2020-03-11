@@ -1,21 +1,21 @@
-= link_to done_show_post_path(done.id) do
+= link_to post_path(post.id) do
   .post
     .post__box
       %h2.post__box__text
-        LIVEを開催した日
+        LIVE予定日
       %h2.post__box__content
-        = done.date_time.strftime("%Y年 %m月 %d日")
+        = post.date_time.strftime("%Y年 %m月 %d日")
 
     .post__box.row
       %h2.post__box__text
         LIVE形式
       %h2.post__box__content
-        = done.form.name
+        = post.form.name
 
     .post__box.row
       %h2.post__box__text
         会場名
       %h2.post__box__content
-        = done.venue
+        = post.venue
     
   

@@ -16,11 +16,19 @@
     display: flex;
     flex-wrap: wrap;
 
+    a{
+      margin: 0 45px 45px 0;
+    }
+    
     .post {
       width: 225px;
-      margin: 0 45px 45px 0;
       padding: 20px;
       background-color: rgba(245, 245, 245, 0.897);
+      transition-duration: .2s;
+
+      &:hover {
+        background-color: rgb(237, 237, 237);
+      }
 
       &__box {
 
@@ -30,6 +38,7 @@
         }
 
         &__content {
+          color: black;
           font-size: 14px;
           font-weight: 600;
         }
