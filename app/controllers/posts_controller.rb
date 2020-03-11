@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :live_yet, :notyet]
-  before_action :set_artist, except: [:not_yet, :notyet, :yet]
-  before_action :set_post, only: [:show, :edit, :update, :done_show]
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy,:done_destroy, :live_yet, :notyet]
+  before_action :set_artist, except: [:destroy,:done_destroy, :not_yet, :notyet, :yet]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
   before_action :status_change, only: [:show, :done_show, :live_yet, :done]
 
@@ -48,6 +48,24 @@ class PostsController < ApplicationController
       end
     else
       render :edit
+    end
+  end
+
+
+  def destroy
+    if current_user.id == @post.user_id && @post.destroy
+      redirect_to live_yet_posts_path
+    else
+      redirect_to post_path(@post.id)
+    end
+  end
+
+
+  def done_destroy
+    if current_user.id == @post.user_id && @post.destroy
+      redirect_to done_posts_path
+    else
+      redirect_to done_destroy_post_path(@post.id)
     end
   end
 

@@ -70,9 +70,12 @@
           = link_to edit_post_path(@post.id) do
             LIVE情報を編集
 
-      .show-live__info__btns__btn.delete
+      .show-live__info__btns__btn.delete-post
         投稿を削除
 
       - if @post.status == true
-        .show-live__info__btns__btn.delete
+        .show-live__info__btns__btn.cancel
           LIVEを中止する
+
+= render "shared/delete"
+.background
