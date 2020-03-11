@@ -2,35 +2,35 @@
   %ul.side-bar__lists
 
     %li.bar.show-1
-    %li.side-bar__lists__list
+    %li.side-bar__lists__list.hid
       = link_to users_path do
         %i.fas.fa-home
         アカウント情報
         %i.fas.fa-chevron-right
 
     %li.bar.show-2
-    %li.side-bar__lists__list
+    %li.side-bar__lists__list.hid
       = link_to edit_user_path(current_user) do
         %i.fas.fa-user-cog
         プロフィールを編集
         %i.fas.fa-chevron-right
 
     %li.bar.show-3
-    %li.side-bar__lists__list
+    %li.side-bar__lists__list.hid
       = link_to '#' do
         %i.fas.fa-star
         お気に入りアーティスト
         %i.fas.fa-chevron-right
 
     %li.bar.show-4
-    %li.side-bar__lists__list
+    %li.side-bar__lists__list.hid
       = link_to '#' do
         %i.fas.fa-headphones
         行きたいLIVE
         %i.fas.fa-chevron-right
 
     %li.bar.show-5
-    %li.side-bar__lists__list
+    %li.side-bar__lists__list.hid
       - if @artist_info.present? 
         = link_to edit_artist_path(@artist_info.id) do
           %i.fas.fa-address-card
@@ -43,7 +43,7 @@
           %i.fas.fa-chevron-right
 
     %li.bar.show-6
-    %li.side-bar__lists__list
+    %li.side-bar__lists__list.hid
       - if @artist_info.present? 
         = link_to new_post_path do
           %i.fas.fa-podcast
@@ -55,7 +55,7 @@
           LIVE情報を投稿
           %i.fas.fa-chevron-right
 
-    %li.bar.show-7
+    %li.bar.show-7.hid
     %li.side-bar__lists__list
       - if @artist_info.present? 
         = link_to live_yet_posts_path do
@@ -68,7 +68,7 @@
           開催予定のLIVE
           %i.fas.fa-chevron-right
 
-    %li.bar.show-8
+    %li.bar.show-8.hid
     %li.side-bar__lists__list
       - if @artist_info.present? 
         = link_to done_posts_path do
@@ -81,9 +81,11 @@
           過去に開催したLIVE
           %i.fas.fa-chevron-right
 
-    %li.side-bar__lists__list
-      = link_to destroy_user_session_path, method: :delete do
+    %li.side-bar__lists__list.logout-show
+      .side-bar__lists__list__logout
         %i.fas.fa-sign-out-alt
         ログアウト
         %i.fas.fa-chevron-right
 
+= render "shared/logout"
+  
