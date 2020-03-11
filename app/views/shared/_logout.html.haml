@@ -1,0 +1,11 @@
+.log-out
+  .log-out__top
+    ログアウトしますか？
+  
+  .log-out__bottom
+    .log-out__bottom__left
+      = link_to destroy_user_session_path, method: :delete do
+        はい
+
+    .log-out__bottom__right
+      いいえ
