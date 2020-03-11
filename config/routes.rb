@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   end
   resources :posts, only: [:new, :create] do
     collection do
+      get 'live_yet'
       get 'notyet' 
+      get 'not_yet' 
     end
   end
 end

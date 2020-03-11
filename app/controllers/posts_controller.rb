@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :notyet]
-  before_action :set_artist, only: [:new, :create]
+  before_action :authenticate_user!, only: [:index, :new, :create, :live_yet, :notyet]
+  before_action :set_artist, only: [:new, :create ,:live_yet]
 
   def new
     if current_user.artist.present?
@@ -15,14 +15,22 @@ class PostsController < ApplicationController
     @artist = Artist.find_by(user_id: current_user.id)
     @post = Post.new(post_params)
     if @post.save
-      redirect_to users_path
+      redirect_to live_yet_posts_path
     else
       render :new
     end
   end
 
 
+  def live_yet
+    @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC")
+  end
+
+
   def notyet
+  end
+
+  def not_yet
   end
 
   private
