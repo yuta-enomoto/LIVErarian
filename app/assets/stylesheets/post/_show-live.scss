@@ -80,10 +80,25 @@
         }
       }
 
-      .delete {
+      .delete-post {
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .cancel {
         font-size: 14px;
         cursor: pointer;
       }
     }
   }
+}
+
+.background {
+  background-color: #222f41;
+  width: 860px;
+  height: 741px;
+  position: absolute;
+  bottom: 0px;
+  opacity: 0;
+  display: none;
 }
