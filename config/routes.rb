@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :posts, except: [:index] do
     member do
       get 'done_show'
+      delete 'done_destroy'
     end
     collection do
       get 'live_yet'
