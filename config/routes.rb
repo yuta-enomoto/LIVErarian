@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       get 'notyet' 
     end
   end
-  resources :posts, only: [:show, :new, :create] do
+  resources :posts, only: [:show, :new, :create ,:edit, :update] do
     member do
       get 'done_show'
     end
