@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :new, :create, :live_yet, :notyet]
-  before_action :set_artist, only: [:show, :done_show, :new, :create ,:live_yet, :done]
-  before_action :set_post, only: [:show, :done_show]
-  before_action :status_change, only: [:live_yet, :done]
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :live_yet, :notyet]
+  before_action :set_artist, except: [:not_yet, :notyet, :yet]
+  before_action :set_post, only: [:show, :edit, :update, :done_show]
+  before_action :artist_id, only: [:edit, :create, :update]
+  before_action :status_change, only: [:show, :done_show, :live_yet, :done]
 
   def show
   end
@@ -26,6 +27,27 @@ class PostsController < ApplicationController
       redirect_to live_yet_posts_path
     else
       render :new
+    end
+  end
+
+
+  def edit 
+    if @post.status == false
+      redirect_to done_show_post_path(@post.id)
+    end
+  end
+
+
+  def update
+    if current_user.id == @post.user_id && @post.update(post_params)
+      status_change
+      if @status.status == true
+        redirect_to post_path(@post.id)
+      elsif @status.status == false
+        redirect_to done_show_post_path(@post.id)
+      end
+    else
+      render :edit
     end
   end
 
@@ -68,6 +90,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def artist_id
+    @artist = Artist.find_by(user_id: current_user.id)
   end
 
 
