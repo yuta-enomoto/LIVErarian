@@ -4,5 +4,16 @@
       開催予定のLIVE
   
   .live-yet__main
-    = render partial: 'shared/post', collection: @posts
+    - if  @posts.present?
+      = render partial: 'shared/post', collection: @posts
+
+    - else
+      .live-yet__main__yet
+        %h2.live-yet__main__yet__text
+          現在開催を予定しているLIVEはありません。
+        
+        .live-yet__main__yet__box
+          = link_to new_post_path do
+            LIVE情報を投稿
+
   
