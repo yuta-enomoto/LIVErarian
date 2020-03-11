@@ -4,12 +4,17 @@
   background-color: $wh;
 
   &__top {
-    margin: 0 0 90px;
+    margin: 0 0 50px;
 
     &__text {
       font-size: 45px;
       line-height: 56px;
     }
+  }
+
+  &__count {
+    color: #919496;
+    margin: 0 0 30px;
   }
 
   &__main {

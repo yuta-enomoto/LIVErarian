@@ -3,6 +3,11 @@
     %h1.live-yet__top__text
       開催予定のLIVE
   
+  - if  @posts.present?
+    .live-yet__count
+      = @count
+      件のLIVEを開催する予定です。
+
   .live-yet__main
     - if  @posts.present?
       = render partial: 'shared/post', collection: @posts

@@ -3,6 +3,11 @@
     %h1.done__top__text
       過去に開催したLIVE
   
+  - if  @dones.present?
+    .done__count
+      = @count
+      件のLIVEを過去に開催しました。
+
   .done__main
     - if  @dones.present?
       = render partial: 'shared/done', collection: @dones

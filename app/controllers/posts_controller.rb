@@ -32,11 +32,13 @@ class PostsController < ApplicationController
 
   def live_yet    
     @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC")
+    @count = @posts.length
   end
 
 
   def done
     @dones = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC")
+    @count = @dones.length
   end
 
 
