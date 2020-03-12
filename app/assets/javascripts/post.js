@@ -12,6 +12,8 @@ $(document).on('turbolinks:load', function(){
     //=========================================================
 
     
+    
+    //ライブハウスを選んだ時に料金フォームを表示======================
     $(document).on('change', '.active-js', function() {
       var val = $(this).val();
       if (val == 1) {
@@ -23,6 +25,7 @@ $(document).on('turbolinks:load', function(){
     });
 
 
+    //バリデーション画面でurlが変わるのでそれに対応====================
     if (window.location.href.match("post")){
       var val = $('.active-js').val();
         if (val == 1) {

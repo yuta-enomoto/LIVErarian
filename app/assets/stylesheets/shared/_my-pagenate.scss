@@ -1,0 +1,57 @@
+.my-pagenate {
+  display: flex;
+  justify-content: center;
+  margin: 0 40px 0 0;
+
+  .pagination {
+
+    display: flex;
+
+    .nav-links{
+      padding: 2em;
+      display: flex;
+      justify-content: center;
+      background:#f3f3f3;
+    }
+    span {
+        width: 50px;
+        height: 50px;
+        margin: 2px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        background:#222326;
+        border-radius:100%;
+      a{
+        width: 50px;
+        height: 50px;
+        font-weight: bold;
+        color: $wh;
+        transition:.3s;
+        border-radius:100%;
+        padding: 19px;
+
+      }
+      a:hover{
+        color: $hover;
+        border-radius: 100%;
+        transform: rotate(360deg);
+      }
+    }
+    .current{
+      color: $hover;
+    }
+    .dots{
+      background: none;
+    }
+
+    .first {
+      display: none;
+    }
+
+    .last {
+      display: none;
+    }
+  }
+}

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
   before_action :status_change, only: [:show, :done_show, :live_yet, :done]
+  after_action :status_change, only: [:create, :update, :destroy, :done_destroy]
 
   def show
   end
@@ -71,14 +72,15 @@ class PostsController < ApplicationController
 
 
   def live_yet    
-    @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC")
-    @count = @posts.length
+    @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC").page(params[:page]).per(9)
+    @count = Post.where(user_id: current_user.id, status: '1').length
   end
 
 
   def done
-    @dones = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC")
-    @count = @dones.length
+    @dones = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC").page(params[:page]).per(9)
+    @count = Post.where(user_id: current_user.id, status: '0').length
+
   end
 
 
@@ -110,13 +112,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+
   def artist_id
     @artist = Artist.find_by(user_id: current_user.id)
   end
 
 
   def status_change 
-    @status = Post.order(date_time: "ASC").find_by(user_id: current_user.id, status: '1')
+    @status = Post.order(date_time: "ASC").find_by(status: '1')
     @time = DateTime.now.to_s(:db)
     if @status.present?
       if Rails.env.production?
