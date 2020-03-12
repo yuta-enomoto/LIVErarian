@@ -1,0 +1,21 @@
+.artist-box {
+  margin: 0 27px;
+
+  &__image {
+
+    img {
+      display: block;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    text-align: center;
+    margin: 5px 0 0;
+    font-size: 20px;
+  }
+
+}
