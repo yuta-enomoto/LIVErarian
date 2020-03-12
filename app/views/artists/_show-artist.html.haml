@@ -20,11 +20,14 @@
           開催したLIVE (
           = @count_done
           件)
-          
-        - if user_signed_in? 
+
+        - if user_signed_in? && current_user.id == @artist.user.id
+          = link_to edit_artist_path(@artist.id) do
+            アーティスト情報を編集
+
+        - elsif user_signed_in? 
           %h2.show-main__container__top__right__follow
             フォロー
-
 
 
     .show-main__container__bottom
@@ -44,5 +47,5 @@
 
         .show-main__container__bottom__field__content
           .show-main__container__bottom__field__content__right
-            = @artist.introduction
+            = simple_format(@artist.introduction)
 
