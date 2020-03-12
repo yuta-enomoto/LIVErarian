@@ -1,0 +1,46 @@
+.show-main
+  .show-main__container
+    %h2.show-main__container__title
+      アーティスト情報
+    .show-main__container__line
+    
+    
+    .show-main__container__top
+      .show-main__container__top__left
+        = image_tag @artist.image.url
+
+      .show-main__container__top__right
+        %h2.show-main__container__top__right__name
+          = @artist.name
+        %h2.show-main__container__top__right__text
+          開催予定のLIVE (
+          = @count_yet
+          件)
+        %h2.show-main__container__top__right__text
+          開催したLIVE (
+          = @count_done
+          件)
+        %h2.show-main__container__top__right__follow
+          フォロー
+
+
+
+    .show-main__container__bottom
+      .show-main__container__bottom__field
+        .show-main__container__bottom__field__content
+          .show-main__container__bottom__field__content__left
+            主な活動拠点
+
+        .show-main__container__bottom__field__content
+          .show-main__container__bottom__field__content__right
+            = @artist.active_place
+
+      .show-main__container__bottom__field
+        .show-main__container__bottom__field__content
+          .show-main__container__bottom__field__content__left
+            紹介メッセージ
+
+        .show-main__container__bottom__field__content
+          .show-main__container__bottom__field__content__right
+            = @artist.introduction
+

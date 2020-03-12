@@ -1,9 +1,11 @@
 class ArtistsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :notyet]
   before_action :set_params, only: [:show, :edit, :update]
-  before_action :set_artist, only: [:index, :edit, :update]
+  before_action :set_artist, only: [:index,:show, :edit, :update]
 
   def show
+    @count_yet = Post.where(user_id: @artist.user_id, status: '1').length
+    @count_done = Post.where(user_id: @artist.user_id, status: '0').length
   end
 
 
