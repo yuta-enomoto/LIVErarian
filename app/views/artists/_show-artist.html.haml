@@ -20,8 +20,10 @@
           開催したLIVE (
           = @count_done
           件)
-        %h2.show-main__container__top__right__follow
-          フォロー
+          
+        - if user_signed_in? 
+          %h2.show-main__container__top__right__follow
+            フォロー
 
 
 
