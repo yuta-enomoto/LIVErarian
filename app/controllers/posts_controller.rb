@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :set_artist, except: [:destroy,:done_destroy, :not_yet, :notyet, :yet]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
-  before_action :status_change, only: [:show, :done_show, :live_yet, :done]
   after_action :status_change, only: [:create, :update, :destroy, :done_destroy]
 
   def show
