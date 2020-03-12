@@ -10,15 +10,21 @@
   .home__container.row
     %h2.home__container__title
       本日開催される路上ライブ
-    .home__container__contents-2
-      = render partial: 'shared/today', collection: @todays.first(3)
-
+    - if @todays.present?
+      .home__container__contents-2
+        = render partial: 'shared/today', collection: @todays.first(3)
+    - else
+      %h2.home__container__today-none
+        本日開催される路上ライブはありません。
 
   .home__container.row
     %h2.home__container__title
       本日開催されるライブ（ライブハウス）
-    .home__container__contents-2
-      = render partial: 'shared/today_house', collection: @today_houses.first(3)
-
+    - if @today_houses.present?
+      .home__container__contents-2
+        = render partial: 'shared/today_house', collection: @today_houses.first(3)
+    - else
+      %h2.home__container__today-none
+        本日ライブハウスで開催されるライブはありません。
 
   = render 'shared/second-introduction'
