@@ -25,7 +25,8 @@ class PostsController < ApplicationController
     @artist = Artist.find_by(user_id: current_user.id)
     @post = Post.new(post_params)
     if @post.save
-      redirect_to live_yet_posts_path
+      status_change
+      redirect_status
     else
       render :new
     end
@@ -42,11 +43,7 @@ class PostsController < ApplicationController
   def update
     if current_user.id == @post.user_id && @post.update(post_params)
       status_change
-      if @status.status == true
-        redirect_to post_path(@post.id)
-      elsif @status.status == false
-        redirect_to done_show_post_path(@post.id)
-      end
+      redirect_status
     else
       render :edit
     end
@@ -115,6 +112,15 @@ class PostsController < ApplicationController
 
   def artist_id
     @artist = Artist.find_by(user_id: current_user.id)
+  end
+
+
+  def redirect_status
+    if @status.status == true
+      redirect_to post_path(@post.id)
+    elsif @status.status == false
+      redirect_to done_show_post_path(@post.id)
+    end
   end
 
 
