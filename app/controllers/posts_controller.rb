@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy,:done_destroy, :live_yet, :notyet]
-  before_action :set_artist, except: [:destroy,:done_destroy, :not_yet, :notyet, :yet]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
   after_action :status_change, only: [:create, :update, :destroy, :done_destroy]
@@ -96,13 +95,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:station, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: @artist.id)
-  end
-
-
-  def set_artist 
-    if user_signed_in? && current_user.artist.present?
-      @artist_info = current_user.artist
-    end
   end
 
 

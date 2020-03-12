@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :notyet]
   before_action :set_params, only: [:show, :edit, :update]
-  before_action :set_artist, only: [:index,:show, :edit, :update]
+
 
   def show
     @count_yet = Post.where(user_id: @artist.user_id, status: '1').length
@@ -17,6 +17,7 @@ class ArtistsController < ApplicationController
     end
   end
 
+
   def create 
     @artist = Artist.new(artist_params)
 
@@ -27,8 +28,10 @@ class ArtistsController < ApplicationController
     end
   end
 
+
   def edit 
   end
+
 
   def update 
     if current_user.id == @artist.user_id && @artist.update(artist_params)
@@ -37,6 +40,7 @@ class ArtistsController < ApplicationController
       render :edit
     end
   end
+
 
   def notyet
   end
@@ -48,14 +52,9 @@ class ArtistsController < ApplicationController
     params.require(:artist).permit(:name, :introduction, :active_place, :image).merge(user_id: current_user.id)
   end
 
+
   def set_params 
     @artist = Artist.find(params[:id])
-  end
-
-  def set_artist 
-    if user_signed_in? && current_user.artist.present?
-      @artist_info = current_user.artist
-    end
   end
 
 end
