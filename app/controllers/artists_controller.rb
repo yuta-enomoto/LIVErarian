@@ -1,7 +1,10 @@
 class ArtistsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :notyet]
-  before_action :set_params, only: [:edit, :update]
+  before_action :set_params, only: [:show, :edit, :update]
   before_action :set_artist, only: [:index, :edit, :update]
+
+  def show
+  end
 
 
   def new
