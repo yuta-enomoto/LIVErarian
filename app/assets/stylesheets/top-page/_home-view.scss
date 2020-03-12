@@ -1,3 +1,18 @@
 .home {
 
+  &__container {
+    margin: 60px 0 0;
+
+    &__title {
+      font-size: 38px;
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    &__contents {
+      display: flex;
+      margin: 0 210px;
+    }
+
+  }
 }

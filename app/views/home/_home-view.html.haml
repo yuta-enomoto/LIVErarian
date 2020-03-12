@@ -1,3 +1,12 @@
 .home
   = render 'shared/first-introduction'
+
+  .home__container
+    %h2.home__container__title
+      新着アーティスト
+    .home__container__contents
+      = render partial: 'shared/new', collection: @news.first(4)
+
+
+
   = render 'shared/second-introduction'
