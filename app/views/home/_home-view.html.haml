@@ -14,4 +14,11 @@
       = render partial: 'shared/today', collection: @todays.first(3)
 
 
+  .home__container.row
+    %h2.home__container__title
+      本日開催されるライブ（ライブハウス）
+    .home__container__contents-2
+      = render partial: 'shared/today_house', collection: @today_houses.first(3)
+
+
   = render 'shared/second-introduction'
