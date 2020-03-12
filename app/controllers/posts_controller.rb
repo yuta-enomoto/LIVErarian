@@ -99,8 +99,10 @@ class PostsController < ApplicationController
   end
 
 
-  def set_artist
-    @artist_info = current_user.artist
+  def set_artist 
+    if user_signed_in? && current_user.artist.present?
+      @artist_info = current_user.artist
+    end
   end
 
 

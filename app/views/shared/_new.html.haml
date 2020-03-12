@@ -1,5 +1,7 @@
 .artist-box
   .artist-box__image
-    = image_tag new.image.url
+    = link_to artist_path(new.id) do 
+      = image_tag new.image.url
   .artist-box__name
-    = new.name
+    = link_to artist_path(new.id) do 
+      = new.name

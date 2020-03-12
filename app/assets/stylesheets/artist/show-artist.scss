@@ -1,0 +1,131 @@
+.show-main {
+  width: 100vw;
+  min-height: 741px;
+  background-color: #F8F8F8;
+  padding: 0px 260px;
+
+  &__container {
+    background-color: $wh;
+    padding: 48px 60px;
+    min-height: 741px;
+
+    &__title {
+      font-size: 45px;
+    }
+
+    &__line {
+      background: currentColor;
+      margin: 0px 0px 10px 0px;
+      color: $sub-green;
+      display: inline-block;
+      height: 3px;
+      width: 314px;
+      line-height: 3px;
+    }
+
+    &__top {
+      display: flex;
+      padding: 0 40px;
+      margin: 50px 0;
+
+      &__left {
+        width: 50%;
+
+
+        img {
+          display: block;
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          object-fit: cover;
+
+        }
+      }
+
+      &__right {
+        width: 50%;
+        padding: 0 0 0 20px;
+        position: relative;
+
+        &__name {
+          font-size: 35px;
+          margin: 45px 0 30px;
+        }
+
+        &__text {
+          font-size: 15px;
+        }
+
+        &__follow {
+          margin: 30px 0 0 226px;
+          padding: 15px 45px 16px;
+          color: #616467;
+          box-shadow: inset 0 0 0 2px #616467;
+          font-size: 14px;
+          border-radius: 500px;
+          transition-duration: .3s;
+          border-width: 0;
+          letter-spacing: 3px;
+          min-width: 149px;
+          text-transform: uppercase;
+          white-space: normal;
+          cursor: pointer;
+
+          &:hover {
+            color: $deep;
+            box-shadow: inset 0 0 0 2px $deep;
+          }
+        }
+
+        a {
+          margin: 30px 0 0 226px;
+          padding: 15px 45px 16px;
+          color: #616467;
+          box-shadow: inset 0 0 0 2px #616467;
+          font-size: 14px;
+          border-radius: 500px;
+          transition-duration: .3s;
+          border-width: 0;
+          letter-spacing: 3px;
+          min-width: 262px;
+          text-transform: uppercase;
+          white-space: normal;
+          cursor: pointer;
+          position: absolute;
+          right: -40px;
+
+          &:hover {
+            color: $wh;
+            background-color: #616467;
+          }
+        }
+      }
+    }
+
+    &__bottom {
+
+      &__field {
+        display: flex;
+        margin: 20px 0 0;
+
+        &__content {
+          width: 50%;
+
+          &__left {
+            border-bottom: 1px solid #d9dadc;
+            font-size: 16px;
+            color: #c2c1c1;
+            padding: 0 0 20px;
+            height: 100%;
+          }
+
+          &__right {
+            border-bottom: 1px solid #d9dadc;
+            font-size: 16px;
+            padding: 0 0 20px;
+          }
+        }
+      }
+    }
+  }
+}
