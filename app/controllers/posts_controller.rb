@@ -14,14 +14,10 @@ class PostsController < ApplicationController
 
 
   def show_post
-    # @count_yet = Post.where(user_id: @todays.user_id, status: '1').length
-    # @count_done = Post.where(user_id: @todays.user_id, status: '0').length
   end
 
 
   def show_house
-    # @count_yet = Post.where(user_id: @today_houses.user_id, status: '1').length
-    # @count_done = Post.where(user_id: @today_houses.user_id, status: '0').length
   end
 
 

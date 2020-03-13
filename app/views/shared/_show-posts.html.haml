@@ -15,7 +15,7 @@
       件)
 
     - if user_signed_in? && current_user.id == @post.user.id
-      = link_to edit_artist_path(@post.id) do
+      = link_to edit_artist_path(@post.artist_id) do
         アーティスト情報を編集
 
     - elsif user_signed_in? 
