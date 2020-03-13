@@ -1,32 +1,33 @@
-.posts-box 
-  .posts-box__top
-    .posts-box__top__image
-      = image_tag today_house.artist.image.url
+= link_to show_house_post_path(today_house.id) do 
+  .posts-box 
+    .posts-box__top
+      .posts-box__top__image
+        = image_tag today_house.artist.image.url
 
-    .posts-box__top__right
-      %h2.posts-box__top__right__sub
-        アーティスト名
-      %h2.posts-box__top__right__text
-        = today_house.artist.name
-      %h2.posts-box__top__right__sub
-        LIVE開始時刻
-      %h2.posts-box__top__right__text
-        = today_house.date_time.strftime("%-m月%-d日 %-H時%-M分")
-      %h2.posts-box__top__right__sub
-        LIVE予定時間
-      %h2.posts-box__top__right__text
-        = today_house.how_long.name
+      .posts-box__top__right
+        %h2.posts-box__top__right__sub
+          アーティスト名
+        %h2.posts-box__top__right__text
+          = today_house.artist.name
+        %h2.posts-box__top__right__sub
+          LIVE開始時刻
+        %h2.posts-box__top__right__text
+          = today_house.date_time.strftime("%-m月%-d日 %-H時%-M分")
+        %h2.posts-box__top__right__sub
+          LIVE予定時間
+        %h2.posts-box__top__right__text
+          = today_house.how_long.name
 
 
-  .posts-box__bottom
-    .posts-box__bottom__box
-      .posts-box__bottom__box__left
-        最寄駅
-      .posts-box__bottom__box__right
-        = today_house.station
-    .posts-box__bottom__box
-      .posts-box__bottom__box__left
-        会場名
-      .posts-box__bottom__box__right
-        = today_house.venue
+    .posts-box__bottom
+      .posts-box__bottom__box
+        .posts-box__bottom__box__left
+          最寄駅
+        .posts-box__bottom__box__right
+          = today_house.station
+      .posts-box__bottom__box
+        .posts-box__bottom__box__left
+          会場名
+        .posts-box__bottom__box__right
+          = today_house.venue
 
