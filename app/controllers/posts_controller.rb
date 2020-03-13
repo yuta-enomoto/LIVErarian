@@ -1,14 +1,20 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy,:done_destroy, :live_yet, :notyet]
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :done_destroy, :done_show]
+  before_action :set_post, only: [:show, :show_post, :edit, :update, :destroy, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
   after_action :status_change, only: [:create, :update, :destroy, :done_destroy]
 
   def show
   end
 
+
   def done_show
   end
+
+
+  def show_post
+  end
+
 
   def new
     if current_user.artist.present?
