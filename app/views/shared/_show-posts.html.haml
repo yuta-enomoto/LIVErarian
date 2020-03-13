@@ -1,10 +1,12 @@
 .show-main__container__top
   .show-main__container__top__left
-    = image_tag @post.artist.image.url
+    = link_to artist_path(@post.user.id) do 
+      = image_tag @post.artist.image.url
 
   .show-main__container__top__right
     %h2.show-main__container__top__right__name
-      = @post.artist.name
+      = link_to artist_path(@post.user.id) do 
+        = @post.artist.name
     %h2.show-main__container__top__right__text
       開催予定のLIVE (
       = @count_yet
@@ -15,7 +17,7 @@
       件)
 
     - if user_signed_in? && current_user.id == @post.user.id
-      = link_to edit_artist_path(@post.artist_id) do
+      = link_to edit_artist_path(@post.artist_id), class: "edit" do
         アーティスト情報を編集
 
     - elsif user_signed_in? 
