@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy,:done_destroy, :live_yet, :notyet]
   before_action :set_post, only: [:show, :show_post, :show_house, :edit, :update, :destroy, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
+  before_action :count_post, only: [:show_post, :show_house]
   after_action :status_change, only: [:create, :update, :destroy, :done_destroy]
 
   def show
@@ -13,10 +14,14 @@ class PostsController < ApplicationController
 
 
   def show_post
+    # @count_yet = Post.where(user_id: @todays.user_id, status: '1').length
+    # @count_done = Post.where(user_id: @todays.user_id, status: '0').length
   end
 
 
   def show_house
+    # @count_yet = Post.where(user_id: @today_houses.user_id, status: '1').length
+    # @count_done = Post.where(user_id: @today_houses.user_id, status: '0').length
   end
 
 
@@ -124,6 +129,12 @@ class PostsController < ApplicationController
     elsif @status.status == false
       redirect_to done_show_post_path(@post.id)
     end
+  end
+
+
+  def count_post
+    @count_yet = Post.where(user_id: @post.user_id, status: '1').length
+    @count_done = Post.where(user_id: @post.user_id, status: '0').length
   end
 
 
