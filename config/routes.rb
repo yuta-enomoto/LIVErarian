@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     member do
       get 'done_show'
       get 'show_post'
+      get 'show_house'
       delete 'done_destroy'
     end
     collection do

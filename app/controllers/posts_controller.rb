@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy,:done_destroy, :live_yet, :notyet]
-  before_action :set_post, only: [:show, :show_post, :edit, :update, :destroy, :done_destroy, :done_show]
+  before_action :set_post, only: [:show, :show_post, :show_house, :edit, :update, :destroy, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
   after_action :status_change, only: [:create, :update, :destroy, :done_destroy]
 
@@ -13,6 +13,10 @@ class PostsController < ApplicationController
 
 
   def show_post
+  end
+
+
+  def show_house
   end
 
 
