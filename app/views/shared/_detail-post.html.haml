@@ -58,11 +58,9 @@
 
 .show-post__container__under
   - if user_signed_in? && current_user.id == @post.user.id
-    -# = link_to edit_post_path(@post.id) do
-    -#   LIVE情報を編集
-
     .show-post__container__under__btns
-      投稿を削除
+      %span.show-post__container__under__btns__delete
+        投稿を削除
       = link_to edit_post_path(@post.id) do
         LIVE情報を編集
 

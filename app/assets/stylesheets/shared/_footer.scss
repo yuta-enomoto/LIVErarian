@@ -1,6 +1,8 @@
 .footer {
   padding: 80px 0 50px;
   background: #000;
+  position: relative;
+  z-index: 100;
 
   &__container {
     margin: 0 135px;

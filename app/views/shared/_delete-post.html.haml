@@ -1,0 +1,11 @@
+.post-delete.top-delete
+  .post-delete__top
+    投稿を削除しますか？
+  
+  .post-delete__bottom
+    .post-delete__bottom__left
+      = link_to destroy_post_post_path(@post), method: :delete do
+        はい
+
+    .post-delete__bottom__right
+      いいえ

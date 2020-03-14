@@ -1,8 +1,19 @@
+.back-non {
+  background-color: #222f41;
+  position: absolute;
+  opacity: 0.5;
+  height: 1379px;
+  width: 100vw;
+  display: none;
+  left: 0;
+}
+
 .show-post {
   width: 100vw;
   min-height: 741px;
   background-color: #F8F8F8;
   padding: 0px 260px;
+  position: relative;
 
   &__container {
     background-color: $wh;
@@ -28,7 +39,10 @@
 
       &__btns {
         margin: 40px 0 0 auto;
-
+  
+        &__delete {
+          cursor: pointer;
+        }
         a {
           margin: 0 0 0 40px;
           padding: 15px 38px 16px 44px;
