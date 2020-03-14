@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     end
     collection do
       get 'live_yet'
+      get 'top'
+      get 'top_done'
       get 'notyet' 
       get 'done'
       get 'not_yet' 
