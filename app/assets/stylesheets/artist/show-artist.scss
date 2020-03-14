@@ -66,22 +66,13 @@
 
             &:hover {
               color: $deep;
-              transition-duration: .2s;
+              transition-duration: .3s;
             }
           }
         }
 
         &__text {
           font-size: 15px;
-
-          a {
-            color: black;
-            transition-duration: .2s;
-
-            &:hover {
-              color: $deep;
-            }
-          }
         }
 
         &__follow {

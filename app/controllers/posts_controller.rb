@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy, :destroy_post,:done_destroy, :top, :top_done, :live_yet, :notyet]
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy, :destroy_post,:done_destroy, :live_yet, :notyet]
   before_action :set_post, only: [:show, :show_post, :show_house, :edit, :update, :destroy, :destroy_post, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
   before_action :count_post, only: [:show_post, :show_house]
@@ -86,18 +86,6 @@ class PostsController < ApplicationController
   end
 
 
-  def top  
-    @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC").page(params[:page]).per(9)
-    @count = Post.where(user_id: current_user.id, status: '1').length
-  end
-
-
-  def top_done
-    @dones = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC").page(params[:page]).per(9)
-    @count = Post.where(user_id: current_user.id, status: '0').length
-  end
-
-
   def live_yet    
     @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC").page(params[:page]).per(9)
     @count = Post.where(user_id: current_user.id, status: '1').length
@@ -107,6 +95,7 @@ class PostsController < ApplicationController
   def done
     @dones = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC").page(params[:page]).per(9)
     @count = Post.where(user_id: current_user.id, status: '0').length
+
   end
 
 

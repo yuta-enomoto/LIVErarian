@@ -6,15 +6,13 @@
     %h2.show-main__container__top__right__name
       = @artist.name
     %h2.show-main__container__top__right__text
-      = link_to top_posts_path do
-        開催予定のLIVE (
-        = @count_yet
-        件)
+      開催予定のLIVE (
+      = @count_yet
+      件)
     %h2.show-main__container__top__right__text
-      = link_to top_done_posts_path do
-        開催したLIVE (
-        = @count_done
-        件)
+      開催したLIVE (
+      = @count_done
+      件)
 
     - if user_signed_in? && current_user.id == @artist.user.id
       = link_to edit_artist_path(@artist.id), class: "edit" do
