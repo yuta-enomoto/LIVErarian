@@ -10,12 +10,12 @@ class ArtistsController < ApplicationController
 
 
   def posts
-    @top_posts = @artist.posts.where(status: '1')
+    @top_posts = @artist.posts.where(status: '1').page(params[:page]).per(6)
   end
 
 
   def done_posts
-    @done_posts = @artist.posts.where(status: '0')
+    @done_posts = @artist.posts.where(status: '0').page(params[:page]).per(6)
   end
 
 

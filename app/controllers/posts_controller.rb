@@ -87,13 +87,13 @@ class PostsController < ApplicationController
 
 
   def live_yet    
-    @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC").page(params[:page]).per(9)
+    @posts = Post.where(user_id: current_user.id, status: '1').order(date_time: "ASC").page(params[:page]).per(6)
     @count = Post.where(user_id: current_user.id, status: '1').length
   end
 
 
   def done
-    @dones = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC").page(params[:page]).per(9)
+    @dones = Post.where(user_id: current_user.id, status: '0').order(date_time: "ASC").page(params[:page]).per(6)
     @count = Post.where(user_id: current_user.id, status: '0').length
 
   end
