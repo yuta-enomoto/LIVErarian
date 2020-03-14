@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+// $(document).on('turbolinks:load', function(){
   $(function(){
 
     function buildHTML() {
@@ -42,4 +42,4 @@ $(document).on('turbolinks:load', function(){
       $(`input#img`).trigger('click');
     })
   });
-});
+// });

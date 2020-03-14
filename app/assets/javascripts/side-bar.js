@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+// $(document).on('turbolinks:load', function(){
   $(function(){
 
     //関数を定義================================================
@@ -101,4 +101,4 @@ $(document).on('turbolinks:load', function(){
 
     }
   });
-});
+// });
