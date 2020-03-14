@@ -9,6 +9,14 @@ class ArtistsController < ApplicationController
   end
 
 
+  def posts
+  end
+
+
+  def done_posts
+  end
+
+
   def new
     if current_user.artist.blank?
       @artist = Artist.new
