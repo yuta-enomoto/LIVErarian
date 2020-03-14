@@ -1,0 +1,26 @@
+.index-posts {
+  width: 100vw;
+  min-height: 741px;
+  background-color: #F8F8F8;
+  padding: 0px 260px;
+
+  &__container {
+    background-color: $wh;
+    padding: 48px 60px;
+    min-height: 741px;
+
+    &__title {
+      font-size: 45px;
+    }
+
+    &__line {
+      background: currentColor;
+      margin: 0px 0px 10px 0px;
+      color: $sub-green;
+      display: inline-block;
+      height: 3px;
+      width: 319px;
+      line-height: 3px;
+    }
+  }
+}
