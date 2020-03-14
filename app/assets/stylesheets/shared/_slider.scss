@@ -1,28 +1,23 @@
-#slick-slide-control00, 
-#slick-slide-control01, 
-#slick-slide-control02, 
-#slick-slide-control03, {
-  display: none;
-}
-
 .arrows {
   position: relative;
   text-align: center;
   margin: 24px 0;
 
   .left-arrow {
+    color: #444444;
     position: absolute;
-    bottom: 125px;
-    left: 80px;
-    width: 70px;
+    bottom: 129px;
+    left: 110px;
+    font-size: 70px;
     cursor: pointer;
   }
 
   .right-arrow {
+    color: #444444;
     position: absolute;
-    bottom: 125px;
-    right: 80px;
-    width: 70px;
+    bottom: 129px;
+    right: 110px;
+    font-size: 70px;
     cursor: pointer;
   }
 }
