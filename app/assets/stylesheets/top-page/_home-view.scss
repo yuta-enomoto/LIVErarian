@@ -2,11 +2,24 @@
 
   &__container {
     margin: 60px 0 0;
+    position: relative;
 
     &__title {
       font-size: 38px;
       text-align: center;
-      margin: 0 0 30px;
+      margin: 0 0 50px;
+
+      &__line {
+        text-align: center;
+        background: currentColor;
+        margin: 0px 0px 10px 0px;
+        color: #2ec92e;
+        height: 5px;
+        width: 145px;
+        position: absolute;
+        left: 645px;
+        top: 58px;
+      }
     }
 
     &__contents {
@@ -21,8 +34,8 @@
 
     &__today-none {
       text-align: center;
-      font-size: 25px;
-      margin: 45px 0 70px;
+      font-size: 20px;
+      margin: 75px 0 100px;  
     }
   }
 
