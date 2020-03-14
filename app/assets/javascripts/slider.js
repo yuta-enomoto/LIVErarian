@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+// $(document).on('turbolinks:load', function(){
   $(function(){
     $(".slider").not('.slick-initialized').slick({
       autoplay: true,
@@ -12,4 +12,4 @@ $(document).on('turbolinks:load', function(){
       slidesToScroll: 2
     });
   });
-});
+// });

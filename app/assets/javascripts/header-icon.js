@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+// $(document).on('turbolinks:load', function(){
   $(function(){
     //マウスが乗った時色を変更==========================
     $(".header-icon").on("mouseover", function () {
@@ -18,4 +18,4 @@ $(document).on('turbolinks:load', function(){
       $(this).css("color", "#fff")
     });
   });
-});
+// });
