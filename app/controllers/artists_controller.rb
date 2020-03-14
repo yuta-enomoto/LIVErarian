@@ -10,13 +10,12 @@ class ArtistsController < ApplicationController
 
 
   def posts
-    @top_posts = @artist.posts
-    @count_yet = Post.where(user_id: @artist.user_id, status: '1').length
-    @count_done = Post.where(user_id: @artist.user_id, status: '0').length
+    @top_posts = @artist.posts.where(status: '1')
   end
 
 
   def done_posts
+    @done_posts = @artist.posts.where(status: '0')
   end
 
 

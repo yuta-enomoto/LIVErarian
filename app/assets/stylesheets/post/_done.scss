@@ -31,10 +31,16 @@
   &__main {
     display: flex;
     flex-wrap: wrap;
+    width: 880px;
 
     a{
       margin: 0 45px 45px 0;
     }
+
+    .index-lists {
+      margin: 0 63px 45px 0;
+    }
+
     .post {
       width: 225px;
       padding: 20px;
@@ -95,5 +101,8 @@
         }
       }
     }
+  }
+  .top-width {
+    width: 810px;
   }
 }
