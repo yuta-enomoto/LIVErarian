@@ -2,6 +2,8 @@
   height: 80px;
   width: 100vw;
   background-color: rgb(14, 14, 14);
+  position: relative;
+  z-index: 100;
 
   &__box {
     height: 100%;

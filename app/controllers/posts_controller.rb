@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy,:done_destroy, :live_yet, :notyet]
-  before_action :set_post, only: [:show, :show_post, :show_house, :edit, :update, :destroy, :done_destroy, :done_show]
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy, :destroy_post,:done_destroy, :live_yet, :notyet]
+  before_action :set_post, only: [:show, :show_post, :show_house, :edit, :update, :destroy, :destroy_post, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
   before_action :count_post, only: [:show_post, :show_house]
-  after_action :status_change, only: [:create, :update, :destroy, :done_destroy]
+  after_action :status_change, only: [:create, :update, :destroy,:destroy_post, :done_destroy]
 
   def show
   end
@@ -62,6 +62,15 @@ class PostsController < ApplicationController
   def destroy
     if current_user.id == @post.user_id && @post.destroy
       redirect_to live_yet_posts_path
+    else
+      redirect_to post_path(@post.id)
+    end
+  end
+
+
+  def destroy_post
+    if current_user.id == @post.user_id && @post.destroy
+      redirect_to root_path
     else
       redirect_to post_path(@post.id)
     end
