@@ -6,8 +6,9 @@
       新着アーティスト
       %h2.home__container__title__line
 
-    .home__container__contents
-      = render partial: 'shared/new', collection: @news.first(4)
+    %ul.home__container__contents.slider
+      = render partial: 'shared/new', collection: @news.first(8)
+    .arrows
 
   .home__container.row
     %h2.home__container__title
