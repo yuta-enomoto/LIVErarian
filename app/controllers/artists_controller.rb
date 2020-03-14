@@ -1,11 +1,21 @@
 class ArtistsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :notyet]
-  before_action :set_params, only: [:show, :edit, :update]
-
+  before_action :set_params, only: [:show, :posts, :done_posts, :edit, :update]
+  before_action :count, only: [:show, :posts, :done_posts]
 
   def show
     @count_yet = Post.where(user_id: @artist.user_id, status: '1').length
     @count_done = Post.where(user_id: @artist.user_id, status: '0').length
+  end
+
+
+  def posts
+    @top_posts = @artist.posts.where(status: '1').page(params[:page]).per(6)
+  end
+
+
+  def done_posts
+    @done_posts = @artist.posts.where(status: '0').page(params[:page]).per(6)
   end
 
 
@@ -55,6 +65,12 @@ class ArtistsController < ApplicationController
 
   def set_params 
     @artist = Artist.find(params[:id])
+  end
+
+
+  def count
+    @count_yet = Post.where(user_id: @artist.user_id, status: '1').length
+    @count_done = Post.where(user_id: @artist.user_id, status: '0').length
   end
 
 end

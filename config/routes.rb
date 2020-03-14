@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :users, only: [:index, :show, :edit, :update]
   resources :artists, only: [:show, :new, :create, :edit, :update] do
+    member do
+      get 'posts'
+      get 'done_posts'
+    end
     collection do
       get 'notyet' 
     end
@@ -22,8 +26,6 @@ Rails.application.routes.draw do
     end
     collection do
       get 'live_yet'
-      get 'top'
-      get 'top_done'
       get 'notyet' 
       get 'done'
       get 'not_yet' 

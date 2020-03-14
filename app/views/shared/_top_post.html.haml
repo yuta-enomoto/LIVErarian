@@ -1,0 +1,21 @@
+= link_to show_post_post_path(top_post.id), class: 'index-lists' do
+  .post
+    .post__box
+      %h2.post__box__text
+        LIVE予定日
+      %h2.post__box__content
+        = top_post.date_time.strftime("%Y年 %m月 %d日")
+
+    .post__box.row
+      %h2.post__box__text
+        LIVE形式
+      %h2.post__box__content
+        = top_post.form.name
+
+    .post__box.row
+      %h2.post__box__text
+        会場名
+      %h2.post__box__content
+        = top_post.venue
+    
+  

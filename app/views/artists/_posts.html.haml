@@ -1,0 +1,19 @@
+.index-posts
+  .index-posts__container
+    %h2.index-posts__container__title
+      開催予定のLIVE
+    .index-posts__container__line
+    
+    = render 'shared/show-artist'
+
+    .live-yet__main.top-width
+      - if @top_posts.present?
+        = render partial: 'shared/top_post', collection: @top_posts
+
+      - else
+        .live-yet__main__yet
+          %h2.live-yet__main__yet__text
+            現在開催を予定しているLIVEはありません。
+    
+    .my-pagenate
+      = paginate(@top_posts)

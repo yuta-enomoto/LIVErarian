@@ -1,0 +1,19 @@
+.index-posts
+  .index-posts__container
+    %h2.index-posts__container__title
+      過去に開催したLIVE
+    .index-posts__container__line.line_2
+    
+    = render 'shared/show-artist'
+
+    .done__main.top-width
+      - if  @done_posts.present?
+        = render partial: 'shared/done_post', collection: @done_posts
+
+      - else
+        .done__main__yet
+          %h2.done__main__yet__text
+            過去に開催したLIVEはありません。
+
+    .my-pagenate
+      = paginate(@done_posts)
