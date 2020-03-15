@@ -16,9 +16,13 @@
       %h2.home__container__title__line
 
     - if @todays.present?
+      .arrows-2
+      %h2.home__container__count
+        本日開催される路上ライブは
+        = @todays.length
+        件です。
       .home__container__contents-2
         = render partial: 'shared/today', collection: @todays
-      .arrows-2
     - else
       %h2.home__container__today-none
         本日開催される路上ライブはありません。
@@ -29,9 +33,13 @@
       %h2.home__container__title__line
 
     - if @today_houses.present?
+      .arrows-3
+      %h2.home__container__count
+        本日開催されるライブ（ライブハウス）は
+        = @today_houses.length
+        件です。
       .home__container__contents-3
         = render partial: 'shared/today_house', collection: @today_houses
-      .arrows-3
     - else
       %h2.home__container__today-none
         本日ライブハウスで開催されるライブはありません。
