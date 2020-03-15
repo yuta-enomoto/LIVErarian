@@ -22,12 +22,25 @@
       }
     }
 
+    &__count {
+      color: #5a5a5a;
+      text-align: center;
+      font-size: 16px;
+      margin: 0 0 40px;
+    }
+
     &__contents {
       display: flex;
       margin: 0 210px;
     }
 
     &__contents-2 {
+      display: flex;
+      justify-content: center;
+      margin: 0 60px;
+    }
+
+    &__contents-3 {
       display: flex;
       justify-content: center;
       margin: 0 60px;

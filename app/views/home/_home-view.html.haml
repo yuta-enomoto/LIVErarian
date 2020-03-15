@@ -6,7 +6,7 @@
       新着アーティスト
       %h2.home__container__title__line
 
-    %ul.home__container__contents.slider
+    .home__container__contents.slider
       = render partial: 'shared/new', collection: @news.first(8)
     .arrows
 
@@ -16,8 +16,13 @@
       %h2.home__container__title__line
 
     - if @todays.present?
+      .arrows-2
+      %h2.home__container__count
+        本日開催される路上ライブは
+        = @todays.length
+        件です。
       .home__container__contents-2
-        = render partial: 'shared/today', collection: @todays.first(3)
+        = render partial: 'shared/today', collection: @todays
     - else
       %h2.home__container__today-none
         本日開催される路上ライブはありません。
@@ -28,8 +33,13 @@
       %h2.home__container__title__line
 
     - if @today_houses.present?
-      .home__container__contents-2
-        = render partial: 'shared/today_house', collection: @today_houses.first(3)
+      .arrows-3
+      %h2.home__container__count
+        本日開催されるライブ（ライブハウス）は
+        = @today_houses.length
+        件です。
+      .home__container__contents-3
+        = render partial: 'shared/today_house', collection: @today_houses
     - else
       %h2.home__container__today-none
         本日ライブハウスで開催されるライブはありません。
