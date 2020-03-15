@@ -21,3 +21,51 @@
     cursor: pointer;
   }
 }
+
+.arrows-2 {
+  position: relative;
+  text-align: center;
+  margin: 24px 0;
+
+  .left-arrow-2 {
+    color: #444444;
+    position: absolute;
+    bottom: 205px;
+    left: 20px;
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  .right-arrow-2 {
+    color: #444444;
+    position: absolute;
+    bottom: 205px;
+    right: 20px;
+    font-size: 50px;
+    cursor: pointer;
+  }
+}
+
+.arrows-3 {
+  position: relative;
+  text-align: center;
+  margin: 24px 0;
+
+  .left-arrow-3 {
+    color: #444444;
+    position: absolute;
+    bottom: 205px;
+    left: 20px;
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  .right-arrow-3 {
+    color: #444444;
+    position: absolute;
+    bottom: 205px;
+    right: 20px;
+    font-size: 50px;
+    cursor: pointer;
+  }
+}
