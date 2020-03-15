@@ -43,6 +43,10 @@
         border-radius: 2px;
         text-indent: 10%;
         font-size: 14px;
+        position: relative;
+        z-index: 2;
+        background: 0;
+        cursor: pointer;
         
         &:focus {
           border: 1px solid #a1a1a1;
@@ -132,6 +136,10 @@
         -webkit-appearance: none;
         border-radius: 2px;
         text-indent: 15%;
+        position: relative;
+        z-index: 2;
+        background: 0;
+        cursor: pointer;
 
         &:focus {
           border: 1px solid #a1a1a1;
