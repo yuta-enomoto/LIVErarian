@@ -5,6 +5,7 @@ class CreateArtists < ActiveRecord::Migration[5.2]
       t.string :image,                  null: false
       t.string :active_place,           null: false
       t.text :introduction,             null: false
+      t.integer :fav_count
       t.references :user,               null: false, foreign_key: true
       t.timestamps
     end
