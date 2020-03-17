@@ -5,6 +5,7 @@
 
 
   .my-artists__main
-
-
     = render partial: 'artist', collection: @artists
+
+  .my-pagenate
+    = paginate(@artists)

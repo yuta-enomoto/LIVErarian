@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:create, :destroy]
 
   def index
-    @artists = Favorite.where(user_id: current_user.id)
+    @artists = Favorite.where(user_id: current_user.id).page(params[:page]).per(12)
   end
 
   def create
