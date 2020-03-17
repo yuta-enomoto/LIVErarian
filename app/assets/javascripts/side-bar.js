@@ -11,6 +11,11 @@
       $('.show-2').css("display", "block")
     }
 
+    function show_3() {
+      $('.show-3').css("display", "block")
+      $('.show-5').css("display", "none")
+    }
+
     function show_5() {
       $('.show-5').css("display", "block")
     }
@@ -30,13 +35,11 @@
       $('.show-8').css("display", "block")
     }
     //========================================================
-
     if (window.location.href.match(/\/users/)){
       show_1()
     }
 
     //=========================================================
-
     if (window.location.href.match(/\/users\/\d+\/edit/)){
       show_2()
     }
@@ -50,7 +53,7 @@
       show_5()
     }
 
-    if (window.location.href.match(/\/artists\/\d+/)){
+    if (window.location.href.match(/artists\/\d+/)){
       show_5()
     }
 
@@ -97,8 +100,12 @@
     }
 
     if (window.location.href.match(/\/posts\/\d+\/done_show/)){
-      show_8()
-
+      show_8()      
     }
+
+     //=========================================================
+     if (window.location.href.match(/\/artists\/\d+\/favorites/)){
+      show_3()
+    }
+
   });
-// });

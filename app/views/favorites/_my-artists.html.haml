@@ -1,0 +1,14 @@
+.my-artists
+  %h2.my-artists__title
+    お気に入りアーティスト
+  .my-artists__line.line_2
+
+  %h2.my-artists__text
+    = @artists.length
+    組のお気に入りアーティスト。
+
+  .my-artists__main
+    = render partial: 'artist', collection: @artists
+
+  .my-pagenate
+    = paginate(@artists)

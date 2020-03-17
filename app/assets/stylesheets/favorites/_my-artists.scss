@@ -1,0 +1,30 @@
+.my-artists {
+  width: 860px;
+  padding: 48px 0px 90px 48px;
+  background-color: white;
+
+  &__title {
+    font-size: 45px;
+    line-height: 56px;
+  }
+
+  &__text {
+    color: #919496;
+    margin: 30px 0 50px;
+  }
+
+  &__line {
+    background: currentColor;
+    margin: 0px 0px 10px 0px;
+    color: $sub-green;
+    display: inline-block;
+    height: 3px;
+    width: 424px;
+    line-height: 3px;
+  }
+
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
