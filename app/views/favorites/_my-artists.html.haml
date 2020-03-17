@@ -3,12 +3,17 @@
     お気に入りアーティスト
   .my-artists__line.line_2
 
-  %h2.my-artists__text
-    = @artists.length
-    組のお気に入りアーティスト。
+  - if @artists.present?
+    %h2.my-artists__text
+      = @artists.length
+      組のお気に入りアーティスト。
 
-  .my-artists__main
-    = render partial: 'artist', collection: @artists
+    .my-artists__main
+      = render partial: 'artist', collection: @artists
 
-  .my-pagenate
-    = paginate(@artists)
+    .my-pagenate
+      = paginate(@artists)
+
+  - else
+    %h2.my-artists__text-2
+      フォローしているアーティストはいません。

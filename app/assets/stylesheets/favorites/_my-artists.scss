@@ -1,7 +1,7 @@
 .my-artists {
   width: 860px;
   padding: 48px 0px 90px 48px;
-  background-color: white;
+  background-color: $wh;
 
   &__title {
     font-size: 45px;
@@ -11,6 +11,12 @@
   &__text {
     color: #919496;
     margin: 30px 0 50px;
+  }
+
+  &__text-2 {
+    font-size: 16px;
+    line-height: 32px;
+    margin: 30px 0 30px;
   }
 
   &__line {
