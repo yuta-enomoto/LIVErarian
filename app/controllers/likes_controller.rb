@@ -3,6 +3,8 @@ class LikesController < ApplicationController
 
   def index
     @posts = Like.where(user_id: current_user.id).page(params[:page]).per(4)
+    @count = Like.where(user_id: current_user.id).count
+
   end
 
   def create
