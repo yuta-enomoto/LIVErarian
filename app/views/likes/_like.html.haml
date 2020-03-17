@@ -1,5 +1,5 @@
 - if Like.find_by(user_id: current_user.id, post_id: @post.id).present?
-  = link_to post_like_path(@post.id, current_user.id),class: 'show-post__container__under__follow', method: "DELETE", remote: true do
+  = link_to post_like_path(@post.id, current_user.id),class: 'show-post__container__under__unfollow', method: "DELETE", remote: true do
     My LIVEから削除
 - else
   = link_to post_likes_path(@post.id, current_user.id),class: 'show-post__container__under__follow', method: "POST", remote: true do
