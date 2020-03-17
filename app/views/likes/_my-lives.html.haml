@@ -1,0 +1,21 @@
+.my-lives
+  %h2.my-lives__title
+    My LIVE
+  .my-lives__line
+
+
+  - if @posts.present?
+    %h2.my-lives__text
+      行きたいLIVEは
+      = @posts.length
+      件あります。
+
+    .my-lives__main
+      = render partial: 'post', collection: @posts
+
+    -# .my-pagenate
+    -#   = paginate(@artists)
+
+  - else
+    %h2.my-lives__text-2
+      フォローしているアーティストはいません。
