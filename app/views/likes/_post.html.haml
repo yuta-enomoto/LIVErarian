@@ -1,0 +1,34 @@
+- @post = Post.find_by(id: post.post.id)
+
+= link_to show_house_post_path(@post.id) do 
+  .posts-box-2
+    .posts-box-2__top
+      .posts-box-2__top__image
+        = image_tag @post.artist.image.url
+
+      .posts-box-2__top__right
+        %h2.posts-box-2__top__right__sub
+          アーティスト名
+        %h2.posts-box-2__top__right__text
+          = @post.artist.name
+        %h2.posts-box-2__top__right__sub
+          LIVE開始時刻
+        %h2.posts-box-2__top__right__text
+          = @post.date_time.strftime("%-m月%-d日 %-H時%-M分")
+        %h2.posts-box-2__top__right__sub
+          LIVE予定時間
+        %h2.posts-box-2__top__right__text
+          = @post.how_long.name
+
+
+    .posts-box-2__bottom
+      .posts-box-2__bottom__box
+        .posts-box-2__bottom__box__left
+          最寄駅
+        .posts-box-2__bottom__box__right
+          = @post.station
+      .posts-box-2__bottom__box
+        .posts-box-2__bottom__box__left
+          会場名
+        .posts-box-2__bottom__box__right
+          = @post.venue

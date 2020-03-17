@@ -17,14 +17,14 @@
 
     %li.bar.show-3
     %li.side-bar__lists__list.hid
-      = link_to artist_favorites_path(current_user.id ) do
+      = link_to artist_favorites_path(current_user.id) do
         %i.fas.fa-star
         お気に入りアーティスト
         %i.fas.fa-chevron-right
 
     %li.bar.show-4
     %li.side-bar__lists__list.hid
-      = link_to '#' do
+      = link_to post_likes_path(current_user.id ) do
         %i.fas.fa-headphones
         My LIVE
         %i.fas.fa-chevron-right

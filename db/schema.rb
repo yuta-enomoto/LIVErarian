@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_140918) do
+ActiveRecord::Schema.define(version: 2020_03_17_142615) do
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_03_16_140918) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "fee"
     t.string "station", null: false
@@ -41,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_140918) do
     t.boolean "status", default: true, null: false
     t.integer "form_id", null: false
     t.integer "how_long_id", null: false
+    t.integer "likes_count"
     t.bigint "user_id", null: false
     t.bigint "artist_id", null: false
     t.datetime "created_at", null: false
@@ -66,6 +76,8 @@ ActiveRecord::Schema.define(version: 2020_03_16_140918) do
   add_foreign_key "artists", "users"
   add_foreign_key "favorites", "artists"
   add_foreign_key "favorites", "users"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "posts", "artists"
   add_foreign_key "posts", "users"
 end

@@ -3,6 +3,7 @@ class FavoritesController < ApplicationController
 
   def index
     @artists = Favorite.where(user_id: current_user.id).page(params[:page]).per(12)
+    @count = Favorite.where(user_id: current_user.id).count
   end
 
   def create
