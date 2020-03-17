@@ -1,13 +1,20 @@
-
-
-
-
-
-
-
-
-
-
-
 - @artist = Artist.find_by(id: artist.artist.id)
-= @artist.name
+
+.artist-box-2
+  .artist-box-2__image
+    = link_to artist_path(@artist.id) do 
+      = image_tag @artist.image.url
+  .artist-box-2__name
+    = link_to artist_path(@artist.id) do 
+      = @artist.name
+
+
+
+
+
+
+
+
+
+-# - @artist = Artist.find_by(id: artist.artist.id)
+-# = @artist.name

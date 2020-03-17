@@ -37,3 +37,43 @@
   }
 
 }
+
+.artist-box-2 {
+  margin: 0 43px 40px 0;
+  outline: none;
+  
+
+  &__image {
+
+    a {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      display: inline-block;
+
+      img {
+        display: block;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition-duration: .3s;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  &__name {
+    text-align: center;
+    margin: 5px 0 0;
+    font-size: 18px;
+
+    a {
+      color: black;
+    }
+  }
+
+}
