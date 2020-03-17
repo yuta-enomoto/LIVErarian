@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one :artist
   has_many :posts
+  has_many :likes, dependent: :destroy
+  has_many :fav_artists, through: :likes, source: :artist
 
 
   validates :nickname, :birthday, presence: true
