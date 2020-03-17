@@ -15,8 +15,11 @@
 
         .show-main__container__bottom__field__content
           .show-main__container__bottom__field__content__right
-            = @artist.fav_count
-            人
+            - if @artist.fav_count.present?
+              = @artist.fav_count
+              人
+            - else
+              0 人
 
       .show-main__container__bottom__field
         .show-main__container__bottom__field__content

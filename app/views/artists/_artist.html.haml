@@ -13,6 +13,19 @@
   .artist__info__field
     .artist__info__field__content
       .artist__info__field__content__left
+        フォロワー
+    .artist__info__field__content
+      .artist__info__field__content__right
+        - if @artist_info.fav_count.present?
+          = @artist_info.fav_count
+          人
+        - else
+          0 人
+
+
+  .artist__info__field
+    .artist__info__field__content
+      .artist__info__field__content__left
         主な活動拠点
     .artist__info__field__content
       .artist__info__field__content__right
