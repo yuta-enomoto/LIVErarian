@@ -1,8 +1,6 @@
 - if Favorite.find_by(user_id: current_user.id, artist_id: @artist.id)
-  %h2.show-main__container__top__right__follow
-    = link_to artist_favorite_path(@artist.id), method: "DELETE" do
-      フォロー中
+  = link_to artist_favorite_path(@artist.id),class: 'show-main__container__top__right__unfollow', method: "DELETE" do
+    フォロー中
 - else
-  %h2.show-main__container__top__right__follow
-    = link_to artist_favorites_path(@artist.id), method: "POST" do
-      フォロー
+  = link_to artist_favorites_path(@artist.id),class: 'show-main__container__top__right__follow', method: "POST" do
+    フォロー
