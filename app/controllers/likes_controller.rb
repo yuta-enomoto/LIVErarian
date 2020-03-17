@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   before_action :set_like, only: [:create, :destroy]
 
   def index
-    @posts = Like.where(user_id: current_user.id)
+    @posts = Like.where(user_id: current_user.id).page(params[:page]).per(4)
   end
 
   def create

@@ -13,8 +13,8 @@
     .my-lives__main
       = render partial: 'post', collection: @posts
 
-    -# .my-pagenate
-    -#   = paginate(@artists)
+    .my-pagenate
+      = paginate(@posts)
 
   - else
     %h2.my-lives__text-2
