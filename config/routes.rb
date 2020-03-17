@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :users, only: [:index, :show, :edit, :update]
   resources :artists, only: [:show, :new, :create, :edit, :update] do
-    resources :favorites, only: [:create, :destroy]
+    resources :favorites, only: [:index, :create, :destroy]
     member do
       get 'posts'
       get 'done_posts'
