@@ -65,5 +65,5 @@
         LIVE情報を編集
 
   - elsif user_signed_in? 
-    %h2.show-post__container__under__follow
-      My LIVEに追加
+    #like-container
+      = render 'likes/like'
