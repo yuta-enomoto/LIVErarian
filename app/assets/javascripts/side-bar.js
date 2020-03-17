@@ -16,6 +16,11 @@
       $('.show-5').css("display", "none")
     }
 
+    function show_4() {
+      $('.show-4').css("display", "block")
+      $('.show-7').css("display", "none")
+    }
+
     function show_5() {
       $('.show-5').css("display", "block")
     }
@@ -108,4 +113,10 @@
       show_3()
     }
 
+    //=========================================================
+    if (window.location.href.match(/\/posts\/\d+\/likes/)){
+    show_4()
+    }
+
+    
   });
