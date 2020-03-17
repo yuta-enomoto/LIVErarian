@@ -1,6 +1,15 @@
-- if Favorite.find_by(user_id: current_user.id, artist_id: @artist.id).present?
-  = link_to artist_favorite_path(@artist.id, current_user.id),class: 'show-main__container__top__right__unfollow', method: "DELETE", remote: true do
-    フォロー中
+- if @post.present?
+  - if Favorite.find_by(user_id: current_user.id, artist_id: @post.id).present?
+    = link_to artist_favorite_path(@post.id, current_user.id),class: 'show-main__container__top__right__unfollow', method: "DELETE", remote: true do
+      フォロー中
+  - else
+    = link_to artist_favorites_path(@post.id, current_user.id),class: 'show-main__container__top__right__follow', method: "POST", remote: true do
+      フォロー
+
 - else
-  = link_to artist_favorites_path(@artist.id, current_user.id),class: 'show-main__container__top__right__follow', method: "POST", remote: true do
-    フォロー
+  - if Favorite.find_by(user_id: current_user.id, artist_id: @artist.id).present?
+    = link_to artist_favorite_path(@artist.id, current_user.id),class: 'show-main__container__top__right__unfollow', method: "DELETE", remote: true do
+      フォロー中
+  - else
+    = link_to artist_favorites_path(@artist.id, current_user.id),class: 'show-main__container__top__right__follow', method: "POST", remote: true do
+      フォロー

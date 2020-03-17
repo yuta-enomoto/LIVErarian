@@ -23,5 +23,5 @@
         アーティスト情報を編集
 
     - elsif user_signed_in? 
-      %h2.show-main__container__top__right__follow
-        フォロー
+      #follow-container
+        = render 'favorites/favorite'
