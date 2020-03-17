@@ -9,12 +9,6 @@
         = @artist.name
 
     %h2.show-main__container__top__right__text
-      #follower_count
-        フォロワー
-        = @artist.fav_count
-        人
-
-    %h2.show-main__container__top__right__text
       = link_to posts_artist_path(@artist.id) do
         開催予定のLIVE (
         = @count_yet
