@@ -16,7 +16,6 @@ class FavoritesController < ApplicationController
 
   def set_favorite
     @artist = Artist.find(params[:artist_id])
-    @id_name = "#favorite-link-#{@artist.id}"
   end
 
 

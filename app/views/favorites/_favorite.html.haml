@@ -1,6 +1,6 @@
-- if Favorite.find_by(user_id: current_user.id, artist_id: @artist.id)
-  = link_to artist_favorite_path(@artist.id),class: 'show-main__container__top__right__unfollow', method: "DELETE" do
+- if Favorite.find_by(user_id: current_user.id, artist_id: @artist.id).present?
+  = link_to artist_favorite_path(@artist.id, current_user.id),class: 'show-main__container__top__right__unfollow', method: "DELETE", remote: true do
     フォロー中
 - else
-  = link_to artist_favorites_path(@artist.id),class: 'show-main__container__top__right__follow', method: "POST" do
+  = link_to artist_favorites_path(@artist.id, current_user.id),class: 'show-main__container__top__right__follow', method: "POST", remote: true do
     フォロー
