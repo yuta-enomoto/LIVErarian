@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
   resources :posts, except: [:index] do
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:index, :create, :destroy]
     member do
       get 'done_show'
       get 'show_post'
