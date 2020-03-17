@@ -1,9 +1,8 @@
 - if Favorite.find_by(user_id: current_user.id, artist_id: @artist.id)
-  いいネズミ
+  %h2.show-main__container__top__right__follow
+    = link_to artist_favorite_path(@artist.id), method: "DELETE" do
+      フォロー中
 - else
-  .item-button-container__left__like
-    =link_to item_likes_path(item), method: "POST", remote: true do
-      %i.far.fa-heart
-      %span いいね！
-      %span
-        = item.likes_count
+  %h2.show-main__container__top__right__follow
+    = link_to artist_favorites_path(@artist.id), method: "POST" do
+      フォロー

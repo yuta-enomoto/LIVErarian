@@ -23,14 +23,4 @@
         アーティスト情報を編集
 
     - elsif user_signed_in? 
-      %h2.show-main__container__top__right__follow
-        フォロー
-
-      - if Favorite.find_by(user_id: current_user.id, artist_id: @artist.id)
-        = link_to artist_favorite_path(@artist.id), method: "DELETE" do
-          いいネズミ
-      - else
-        .item-button-container__left__like
-          = link_to artist_favorites_path(@artist.id), method: "POST" do
-            %i.far.fa-heart
-            %span いいね！
+      = render 'favorites/favorite'
