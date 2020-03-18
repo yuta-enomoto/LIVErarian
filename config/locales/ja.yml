@@ -13,6 +13,7 @@ ja:
         name: アーティスト名
         active_place: 活動拠点
         introduction: 紹介メッセージ
+        image: 画像
         
     models:
       user: ユーザ
