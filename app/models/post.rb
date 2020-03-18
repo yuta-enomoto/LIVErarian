@@ -10,5 +10,12 @@ class Post < ApplicationRecord
   has_many :like_users, through: :likes, source: :user
 
   validates :date_time, :how_long_id, :form_id, :venue, :station, presence: true
-  
+  validate :date_before_start
+
+
+  def date_before_start
+    errors.add(:date_time, "は現在時刻以降のものを選択してください。") if
+    date_time < Time.now
+  end
+
 end
