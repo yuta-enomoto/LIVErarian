@@ -1,6 +1,7 @@
 ja:
   activerecord:
     attributes:
+
       post:
         date_time: LIVE予定日時
         how_long_id: LIVE予定時間
@@ -8,6 +9,11 @@ ja:
         station: 最寄駅
         venue: 会場名
 
+      artist:
+        name: アーティスト名
+        active_place: 活動拠点
+        introduction: 紹介メッセージ
+        
     models:
       user: ユーザ
       post: 投稿

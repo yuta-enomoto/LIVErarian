@@ -28,7 +28,7 @@
       p.row {
         color: #919496;
         font-size: 16px;
-        margin: 20px 0 20px;
+        margin: 30px 0 20px;
       }
 
       .form {
@@ -38,7 +38,6 @@
         border: 1px solid #d9dadc;
         outline: none;
         font-size: 14px;
-        margin: 0 0 12px;
         @include placeholder();
 
         &:focus {
@@ -53,7 +52,6 @@
         border: 1px solid #d9dadc;
         outline: none;
         font-size: 14px;
-        margin: 0 0 12px;
         @include placeholder();
 
         &:focus {
