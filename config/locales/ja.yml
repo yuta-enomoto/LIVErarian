@@ -5,6 +5,10 @@ ja:
   activerecord:
     attributes:
 
+      user:
+        nickname: ニックネーム
+        birthday: 生年月日
+
       post:
         date_time: LIVE予定日時
         how_long_id: LIVE予定時間
