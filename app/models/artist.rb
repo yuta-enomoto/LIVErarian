@@ -4,8 +4,9 @@ class Artist < ApplicationRecord
   has_many :fav_users, through: :likes, source: :user
   belongs_to :user
 
-  validates :name, :active_place, :introduction, :image, presence: true
-
+  validates :active_place, :image, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :introduction, presence: true, length: { maximum: 200 }
   mount_uploader :image, ImageUploader
 
   def fav_user(user_id, artist_id)

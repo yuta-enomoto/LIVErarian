@@ -70,6 +70,10 @@
       show_5()
     }
 
+    if (window.location.href.match(/\/artists/)){
+      show_5()
+    }
+
     //=========================================================
     if (window.location.href.match(/\/posts/)){
       show_6()

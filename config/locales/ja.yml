@@ -1,5 +1,32 @@
 ja:
+  recaptcha: 
+    errors: 
+      verification_failed: 'reCAPTCHA認証に失敗しました。' 
   activerecord:
+    attributes:
+
+      user:
+        nickname: ニックネーム
+        birthday: 生年月日
+
+      post:
+        date_time: LIVE予定日時
+        how_long_id: LIVE予定時間
+        form_id: LIVE形式
+        station: 最寄駅
+        venue: 会場名
+
+      artist:
+        name: アーティスト名
+        active_place: 活動拠点
+        introduction: 紹介メッセージ
+        image: 画像
+
+    models:
+      user: ユーザ
+      post: 投稿
+      artist: アーティスト
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

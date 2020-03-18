@@ -3,6 +3,19 @@
   padding: 48px;
   background-color: #F8F8F8;
 
+  .frame {
+    margin: 0 0 40px;
+  }
+
+  .tpnhk {
+    margin: 0 0 20px;
+  }
+
+  .tpnhk-mgin {
+    margin: 0 0 20px;
+    width: 165px;
+  }
+
   &__text {
     color: $deep;
     font-size: 26px;
@@ -20,14 +33,12 @@
       position: relative;
       color: #b8b8b8;
 
-      p {
+      span.title {
         color: #919496;
         font-size: 16px;
-        margin: 0 0 20px;
-        position: relative;
       }
 
-      p.row {
+      .row {
         color: #919496;
         font-size: 16px;
         margin: 32px 0 20px;
@@ -106,7 +117,7 @@
       .bar-6 {
         position: absolute;
         font-size: 17px;
-        right: 542px;
+        right: 10px;
       }
       .bar-7 {
         position: absolute;
@@ -243,14 +254,20 @@
 
 
     .form-box {
+      margin: 0 0 40px;
       display: flex;
+
 
       .form-content {
         margin: 0 80px 0 0;
       }
 
+      .first {
+        margin: 0 50px 0 0;
+      }
+
       .not-active {
-        display: none;
+        visibility: hidden;
       }
     }
 

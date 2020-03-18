@@ -4,10 +4,10 @@
 
     //関数を定義================================================
     function show () {
-      $('.not-active').css("display", "block")
+      $('.not-active').css("visibility", "visible")
     }
     function none () {
-      $('.not-active').css("display", "none")
+      $('.not-active').css("visibility", "hidden")
     }
     //=========================================================
 

@@ -13,7 +13,9 @@
 .session__line 
   %strong.session__line__or
     または
-
+- flash.each do |name, msg|
+  - if name != "notice"
+    = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .session__field
     = f.email_field :email, placeholder: "Eメールアドレス", autofocus: true, autocomplete: "email", class: "form"
