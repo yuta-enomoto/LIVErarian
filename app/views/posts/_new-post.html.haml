@@ -33,9 +33,9 @@
         = render partial: 'users/shared/error_messages', locals: { column: :how_long_id, input: @post }
 
       .form-box
-        .form-content
+        .form-content.first
           %label.new-post__container__field
-            .tpnhk
+            .tpnhk-mgin
               %span.title.row LIVE形式
               %span.new-post__container__require-3 必須
             = f.collection_select :form_id, Form.all, :id, :name, {prompt: "--"}, {class: 'selector active-js'}
