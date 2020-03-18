@@ -1,4 +1,7 @@
 ja:
+  recaptcha: 
+    errors: 
+      verification_failed: 'reCAPTCHA認証に失敗しました。' 
   activerecord:
     attributes:
 
@@ -14,7 +17,7 @@ ja:
         active_place: 活動拠点
         introduction: 紹介メッセージ
         image: 画像
-        
+
     models:
       user: ユーザ
       post: 投稿

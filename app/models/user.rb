@@ -21,5 +21,13 @@ class User < ApplicationRecord
   },
   on: :create
 
+  validates :password, presence: true,
+  length: { minimum: 7 },
+  format: {
+    with: /\A(?=.*?[a-z])(?=.*?\d)[a-zA-Z\d]+\z/,
+    message: "は英字と数字の両方を含めて下さい。"
+  },
+  on: :create
+
   
 end
