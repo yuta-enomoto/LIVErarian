@@ -34,6 +34,36 @@ class ApplicationController < ActionController::Base
         end
       end
     end
+    @status = Post.order(date_time: "ASC").find_by(status: '1')
+    @time = DateTime.now.to_s(:db)
+    if @status.present?
+      if Rails.env.production?
+        if @status.date_time < @time
+          @status.status = '0'
+          @status.save
+        end
+      else
+        if @status.date_time + 9.hour < @time
+          @status.status = '0'
+          @status.save
+        end
+      end
+    end
+    @status = Post.order(date_time: "ASC").find_by(status: '1')
+    @time = DateTime.now.to_s(:db)
+    if @status.present?
+      if Rails.env.production?
+        if @status.date_time < @time
+          @status.status = '0'
+          @status.save
+        end
+      else
+        if @status.date_time + 9.hour < @time
+          @status.status = '0'
+          @status.save
+        end
+      end
+    end
   end
 
 end
