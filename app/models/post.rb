@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  geocoded_by :station
+  after_validation :geocode
 
   belongs_to :user
   belongs_to :artist

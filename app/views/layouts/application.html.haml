@@ -8,6 +8,7 @@
     = stylesheet_link_tag    'application', media: 'all'
     %link{ rel: "stylesheet", type: "text/css", href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"}
     = javascript_include_tag 'application'
+    = include_gon
     %script{ type: "text/javascript", src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"}
     %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=#{ENV['GOOGLE_MAP_API_KEY']}&callback=initMap&libraries=places"}
     = analytics_init if Rails.env.production?

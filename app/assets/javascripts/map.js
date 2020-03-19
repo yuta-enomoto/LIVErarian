@@ -3,7 +3,7 @@ function initMap() {
 
   var target = document.getElementById('map');
   var map;
-  var tokyo = {lat: 35.681167, lng: 139.767052};
+  var tokyo = {lat: gon.latitude, lng: gon.longitude};
   var marker;
 
   map = new google.maps.Map(target, {

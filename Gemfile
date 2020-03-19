@@ -83,3 +83,6 @@ gem 'active_hash'
 gem 'fog-aws'
 gem 'kaminari'
 gem 'google-analytics-rails'
+gem "gmaps4rails"
+gem "geocoder"
+gem 'gon'
