@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   def show_post
     gon.latitude = @post.latitude
     gon.longitude = @post.longitude
-
   end
 
 
@@ -117,7 +116,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:station, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: @artist.id)
+    params.require(:post).permit(:station, :address, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: @artist.id)
   end
 
 

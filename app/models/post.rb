@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  geocoded_by :station
+  geocoded_by :address
   after_validation :geocode
 
   belongs_to :user
@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
 
-  validates :date_time, :how_long_id, :form_id, :venue, :station, presence: true
+  validates :date_time, :how_long_id, :form_id,:address, :venue, :station, presence: true
   # validate :date_before_start
 
 
