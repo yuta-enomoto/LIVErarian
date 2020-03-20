@@ -147,6 +147,7 @@ class PostsController < ApplicationController
   def gon_set
     gon.latitude = @post.latitude
     gon.longitude = @post.longitude
+    gon.venue = @post.venue
   end
 
 
