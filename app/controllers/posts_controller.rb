@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def show_post
     gon.latitude = @post.latitude
     gon.longitude = @post.longitude
-    gon.address = @post.station
+
   end
 
 
