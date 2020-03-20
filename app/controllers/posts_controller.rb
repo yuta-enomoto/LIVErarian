@@ -12,6 +12,8 @@ class PostsController < ApplicationController
 
 
   def done_show
+    gon.latitude = @post.latitude
+    gon.longitude = @post.longitude
   end
 
 
@@ -22,6 +24,8 @@ class PostsController < ApplicationController
 
 
   def show_house
+    gon.latitude = @post.latitude
+    gon.longitude = @post.longitude
   end
 
 
