@@ -10,6 +10,8 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :form_id,               null: false, foreign_key: true
       t.integer :how_long_id,           null: false, foreign_key: true
       t.integer :likes_count
+      t.float :latitude
+      t.float :longitude
       t.references :user,               null: false, foreign_key: true
       t.references :artist,             null: false, foreign_key: true
       t.timestamps

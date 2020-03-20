@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2020_03_17_142615) do
     t.integer "form_id", null: false
     t.integer "how_long_id", null: false
     t.integer "likes_count"
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id", null: false
     t.bigint "artist_id", null: false
     t.datetime "created_at", null: false
