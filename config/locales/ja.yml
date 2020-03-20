@@ -15,6 +15,7 @@ ja:
         form_id: LIVE形式
         station: 最寄駅
         venue: 会場名
+        address: 会場の住所
 
       artist:
         name: アーティスト名

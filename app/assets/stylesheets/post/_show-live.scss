@@ -40,11 +40,18 @@
           font-size: 16px;
           padding: 0 0 20px;
         }
+
+        &__bottom {
+          font-size: 16px;
+          color: rgb(194, 193, 193);
+        }
       }
     }
 
     &__btns {
       display: flex;
+      border-top: 1px solid #d9dadc;
+      margin: 40px 0 0;
 
       &__btn {
         margin: 45px 40px 0 0;

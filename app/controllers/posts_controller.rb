@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :show_post, :show_house, :edit, :update, :destroy, :destroy_post, :done_destroy, :done_show]
   before_action :artist_id, only: [:edit, :create, :update]
   before_action :count_post, only: [:show_post, :show_house]
+  before_action :gon_set, only: [:show, :done_show, :show_post, :show_house]
   after_action :status_change, only: [:create, :update, :destroy,:destroy_post, :done_destroy]
 
   def show
@@ -114,7 +115,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:station, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: @artist.id)
+    params.require(:post).permit(:station, :address, :fee, :venue, :date_time, :form_id, :how_long_id ).merge(user_id: current_user.id, artist_id: @artist.id)
   end
 
 
@@ -140,6 +141,13 @@ class PostsController < ApplicationController
   def count_post
     @count_yet = Post.where(user_id: @post.user_id, status: '1').length
     @count_done = Post.where(user_id: @post.user_id, status: '0').length
+  end
+
+
+  def gon_set
+    gon.latitude = @post.latitude
+    gon.longitude = @post.longitude
+    gon.venue = @post.venue
   end
 
 
