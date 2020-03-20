@@ -22,11 +22,22 @@ function initMap() {
           center: results[0].geometry.location,
           zoom: 15
         });
-        
+        // new google.maps.Marker(target,{
+        //   position: results[0].geometry.location,
+        //   map: map,
+        //   title: 'Tokyo!',
+        //   animation: google.maps.Animation.DROP
+        // });
       } else {
         alert('No results found');
         return;
       }
     });
   };
+
+
+  // map = new google.maps.Map(target, {
+  //   center: tokyo,
+  //   zoom: 15
+  // });
 }
