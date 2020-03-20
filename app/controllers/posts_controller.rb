@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   after_action :status_change, only: [:create, :update, :destroy,:destroy_post, :done_destroy]
 
   def show
+    gon.latitude = @post.latitude
+    gon.longitude = @post.longitude
   end
 
 

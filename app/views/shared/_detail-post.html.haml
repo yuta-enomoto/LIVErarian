@@ -49,12 +49,25 @@
   .show-main__container__bottom__field
     .show-main__container__bottom__field__content
       .show-main__container__bottom__field__content__left
+        会場の住所
+
+    .show-main__container__bottom__field__content
+      .show-main__container__bottom__field__content__right
+        = @post.address
+
+  .show-main__container__bottom__field
+    .show-main__container__bottom__field__content
+      .show-main__container__bottom__field__content__left
         最寄駅
 
     .show-main__container__bottom__field__content
       .show-main__container__bottom__field__content__right
         = @post.station
-  
+
+  .show-main__container__bottom__field
+    .show-main__container__bottom__field__content
+      .show-main__container__bottom__field__content__map
+        会場の位置情報
 
   #map
 
