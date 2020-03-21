@@ -158,16 +158,21 @@ class PostsController < ApplicationController
       if Rails.env.production?
         if @status.date_time < @time
           @status.status = '0'
-          @status.save
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
         end
       else
         if @status.date_time + 9.hour < @time
           @status.status = '0'
-          @status.save
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
         end
       end
     end
   end
-
 
 end

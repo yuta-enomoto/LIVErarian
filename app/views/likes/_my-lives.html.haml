@@ -6,9 +6,9 @@
 
   - if @posts.present?
     %h2.my-lives__text
-      行きたいLIVEの内
-      %span#my-lives-count
-      件を表示。
+      行きたいLIVEは
+      = @count
+      件をあります。
 
     .my-lives__main
       = render partial: 'post', collection: @posts
