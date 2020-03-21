@@ -25,12 +25,18 @@ class ApplicationController < ActionController::Base
       if Rails.env.production?
         if @status.date_time < @time
           @status.status = '0'
-          @status.save
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
         end
       else
         if @status.date_time + 9.hour < @time
           @status.status = '0'
-          @status.save
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
         end
       end
     end
@@ -40,12 +46,18 @@ class ApplicationController < ActionController::Base
       if Rails.env.production?
         if @status.date_time < @time
           @status.status = '0'
-          @status.save
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
         end
       else
         if @status.date_time + 9.hour < @time
           @status.status = '0'
-          @status.save
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
         end
       end
     end
@@ -55,15 +67,41 @@ class ApplicationController < ActionController::Base
       if Rails.env.production?
         if @status.date_time < @time
           @status.status = '0'
-          @status.save
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
         end
       else
         if @status.date_time + 9.hour < @time
           @status.status = '0'
-          @status.save
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
+        end
+      end
+    end
+    @status = Post.order(date_time: "ASC").find_by(status: '1')
+    @time = DateTime.now.to_s(:db)
+    if @status.present?
+      if Rails.env.production?
+        if @status.date_time < @time
+          @status.status = '0'
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
+        end
+      else
+        if @status.date_time + 9.hour < @time
+          @status.status = '0'
+          if @status.save
+            @like_delete = Like.where(post_id: @status.id)
+            @like_delete.delete_all
+          end
         end
       end
     end
   end
-
 end
