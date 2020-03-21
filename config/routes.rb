@@ -34,4 +34,10 @@ Rails.application.routes.draw do
       get 'yet'
     end
   end
+  resources :searches do 
+    collection do 
+      get 'post_search' 
+      get 'artist_search'
+    end
+  end
 end
