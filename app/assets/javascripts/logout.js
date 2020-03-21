@@ -19,6 +19,7 @@
     //ログアウトボタンを押した時確認ボタンを出す==============================
     $(".side-bar__lists__list__logout").on("click", function () {
       show()
+      scrollTo(0, 0);
     });
 
 
