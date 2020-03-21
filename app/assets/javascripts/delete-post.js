@@ -27,10 +27,12 @@
     //削除ボタンを押した時確認ボタンを出す==============================
     $(".delete-post").on("click", function () {
       show()
+      scrollTo(0, 0);
     });
 
     $(".show-post__container__under__btns__delete").on("click", function () {
       show()
+      scrollTo(0, 0);
     });
 
 
