@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
 
   def set_ransack
-    @posts_all = Post.where(status: '1')
+    @posts_all = Post.all
     @q = Post.ransack(params[:q])
   end
 
