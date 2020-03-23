@@ -14,6 +14,7 @@
             LIVE検索
           = link_to artist_search_searches_path, class: 'artist-search' do
             アーティスト検索
+
         .search__bottom__left__form
           %h2.search__bottom__left__form__title
             詳細検索
@@ -22,6 +23,11 @@
               %i.fas.fa-plus
               %span キーワードを追加する
             = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索を追加", class: 'input-left'
+          .search__bottom__left__form__group
+            .search__bottom__left__form__group__label
+              %i.fas.fa-guitar
+              %span LIVE形式から探す
+            = f.collection_select :form_id_eq, Form.all, :id, :name, include_blank: 'すべて'
 
 
     = render 'post-right'
