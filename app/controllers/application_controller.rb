@@ -2,13 +2,21 @@ class ApplicationController < ActionController::Base
   before_action :configre_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
   before_action :set_artist
+  before_action :set_ransack
   before_action :now_on_change
   before_action :status_change
 
   private
 
+
   def configre_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :birthday])
+  end
+
+
+  def set_ransack
+    @posts_all = Post.all
+    @q = Post.ransack(params[:q])
   end
 
 

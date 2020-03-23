@@ -5,8 +5,8 @@
       = button_tag 'search', name: nil, class: "search-btn" do
         %i.fas.fa-search
 
+
   .search__bottom
-  
     .search__bottom__left
       .search__bottom__left__which
         = link_to post_search_searches_path, class: 'post-search' do
@@ -15,4 +15,14 @@
           アーティスト検索
       
     .search__bottom__right
-      = render partial: 'post', collection: @posts
+      -if @posts.present?
+        %h2.search__bottom__right__head
+          = @q.artist_name_or_station_or_venue_or_address_cont
+          %span.search__bottom__right__head__text
+            の検索結果
+        .search__bottom__right__number
+          ="1-#{@posts.count}件表示"
+        .search__bottom__right__main 
+          = render partial: 'post', collection: @posts
+
+      - elsif params[:q][:artist_name_or_station_or_venue_or_address_cont].empty?

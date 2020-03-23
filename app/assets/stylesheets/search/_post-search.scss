@@ -1,4 +1,5 @@
 .search {
+  min-height: 741px;
 
   &__top {
     height: 100px;
@@ -93,8 +94,12 @@
 
     &__right {
       width: 1120px;
-      display: flex;
-      flex-wrap: wrap;
+
+
+      &__main {
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
   }
 }

@@ -13,8 +13,14 @@
             = link_to root_path do
               Top
           %li.header__box__container__lists__list
-            = link_to post_search_searches_path do
+            .header__box__container__lists__list__find
               Find
+            = search_form_for(@q, url: post_search_searches_path)do |f|
+              = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索　（アーティスト名、最寄駅、会場名などから検索）", class: 'input-default'
+              = button_tag 'search', name: nil, class: "header-search" do
+                Find
+            -# = link_to post_search_searches_path do
+            -#   Find
           %li.header__box__container__lists__list
             - if @artist_info.present? 
               = link_to new_post_path do

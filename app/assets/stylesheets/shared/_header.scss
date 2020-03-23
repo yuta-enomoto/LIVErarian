@@ -51,6 +51,16 @@
             width: 1px;
           }
 
+          &__find {
+            font-size: 17px;
+            font-weight: bold;
+            color: $wh;
+            
+            &:hover {
+              color:$green;
+            }
+          }
+
           a {
             color: $wh;
 
