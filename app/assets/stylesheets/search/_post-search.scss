@@ -49,8 +49,8 @@
   }
 
   &__bottom {
-    width: 1400px;
-    margin: 0 0 0 140px;
+    width: 1300px;
+    margin: 0 0 0 135px;
     display: flex;
 
     &__left {
@@ -94,6 +94,18 @@
 
     &__right {
       width: 1120px;
+
+      &__head {
+        font-size: 17px;
+        color: black;
+        margin: 0 0 30px 20px;
+      }
+
+      &__number {
+        color: #919496;
+        margin: 0 0 16px 20px;
+
+      }
 
 
       &__main {
