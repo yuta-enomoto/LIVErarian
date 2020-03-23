@@ -27,3 +27,12 @@
         .search__bottom__left__form__group__label
           %i.fas.fa-satellite-dish
           %span LIVE状況
+        .search__bottom__left__form__group__box
+          .search__bottom__left__form__group__box__content
+            %input{type: "checkbox", id: 'check-all'}
+            %label.lbl{for: 'check-all'}
+              すべて
+      
+    = f.submit "完了", class: "comp-btn"
+
+

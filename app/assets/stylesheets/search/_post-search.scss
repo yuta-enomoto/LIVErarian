@@ -123,6 +123,59 @@
             }
           }
 
+          &__box {
+            display: flex;
+            flex-wrap: wrap;
+
+            &__content {
+              margin: 16px 0 0;
+              display: inline-block;
+              font-size: 13px;
+              cursor: pointer;
+            }
+            &__content  input[type="checkbox"]{
+              display: none;
+            }
+          
+            &__content  input[type="checkbox"]+label{
+              cursor: pointer;
+              display: inline-block;
+              position: relative;
+              padding-left: 25px;
+              padding-right: 10px;
+            }
+          
+            &__content  input[type="checkbox"]+label::before{
+              content: "";
+              position: absolute;
+              display: block;
+              box-sizing: border-box;
+              width: 20px;
+              height: 20px;
+              margin-top: -10px;
+              left: 0;
+              top: 50%;
+              border: 1px solid;
+              border-color:  #cacaca; /* 枠の色 */
+              background-color: $wh; /* 背景の色 */
+            }
+            &__content  input[type="checkbox"]:checked+label::after{
+              content: "";
+              position: absolute;
+              display: block;
+              box-sizing: border-box;
+              width: 18px;
+              height: 9px;
+              margin-top: -9px;
+              top: 50%;
+              left: 3px;
+              transform: rotate(-45deg);
+              border-bottom: 3px solid;
+              border-left: 3px solid;
+              border-color: $sub-green; /* チェックの色 */
+            }
+          }
+
           .input-left {
             width: 100%;
             margin: 8px 0 0;
