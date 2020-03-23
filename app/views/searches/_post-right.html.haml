@@ -1,5 +1,12 @@
 .search__bottom__right
-  -if @posts.present?
+
+  - if params[:q][:artist_name_or_station_or_venue_or_address_cont].empty?
+    %h2.search__bottom__right__nil
+      LIVE一覧
+    .search__bottom__right__main 
+      = render partial: 'post', collection: @posts
+
+  -elsif @posts.present?
     %h2.search__bottom__right__head
       = @q.artist_name_or_station_or_venue_or_address_cont
       %span.search__bottom__right__head__text
@@ -8,14 +15,6 @@
       ="1-#{@posts.count}件表示"
     .search__bottom__right__main 
       = render partial: 'post', collection: @posts
-
-
-  - elsif params[:q][:artist_name_or_station_or_venue_or_address_cont].empty?
-    %h2.search__bottom__right__nil
-      LIVE一覧
-    .search__bottom__right__main 
-      = render partial: 'post', collection: @posts_all
-
 
   -else
     %h2.search__bottom__right__head
