@@ -30,6 +30,10 @@
       }
     }
 
+    &__search-hidden {
+      visibility: hidden;
+    }
+
     &__container {
 
       &__lists {
@@ -55,7 +59,8 @@
             font-size: 17px;
             font-weight: bold;
             color: $wh;
-            
+            cursor: pointer;
+
             &:hover {
               color:$green;
             }
