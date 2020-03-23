@@ -55,11 +55,41 @@
     &__left {
       width: 280px;
       margin: 0 40px 0 0;  
+
+      &__which {
+        display: flex;
+        font-size: 14px;
+
+        .post-search {
+          outline: none;
+          cursor: pointer;
+          padding: 13px 37.8px;
+          background: $hover;
+          border: 1px solid $hover;
+          transition-duration: .3s;
+          color: #fff;
+          width: 135.5px;
+          margin: 0;
+        }
+
+        .artist-search {
+          outline: none;
+          cursor: pointer;
+          padding: 13px 17px;
+          background: #aaa;
+          border: 1px solid #aaa;
+          transition-duration: .3s;
+          color: #fff;
+          width: 135.5px;
+          margin: 0;
+
+          &:hover {
+            background: rgb(192, 192, 192);
+            border: 1px solid rgb(192, 192, 192); 
+          }
+        }
+      }
     }
-
-
-
-
 
     &__right {
       width: 1120px;
