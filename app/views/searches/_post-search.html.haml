@@ -2,7 +2,8 @@
   .search__top
     = search_form_for(@q, url: post_search_searches_path)do |f|
       = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索　（アーティスト名、最寄駅、会場名などから検索）", class: 'input-default'
-      = f.submit "完了", class: "comp-btn"
+      = button_tag 'search', name: nil, class: "search-btn" do
+        %i.fas.fa-search
 
   .search__bottom
   

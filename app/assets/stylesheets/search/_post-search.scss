@@ -22,6 +22,17 @@
       outline: none;
       font-size: 14px;
     }
+
+    .search-btn {
+      cursor: pointer;
+      background-color: #d9dadc;
+      min-width: 50px;
+      height: 50px;
+      border: none;
+      font-size: 16px;
+      color: #6a6a6a;
+      outline: none;
+    }
   }
 
   &__bottom {
