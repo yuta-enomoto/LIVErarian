@@ -8,10 +8,20 @@
 
   .search__bottom
     .search__bottom__left
-      .search__bottom__left__which
-        .post-search
-          LIVE検索
-        = link_to artist_search_searches_path, class: 'artist-search' do
-          アーティスト検索
-      
+      = search_form_for(@q, url: post_search_searches_path)do |f|
+        .search__bottom__left__which
+          .post-search
+            LIVE検索
+          = link_to artist_search_searches_path, class: 'artist-search' do
+            アーティスト検索
+        .search__bottom__left__form
+          %h2.search__bottom__left__form__title
+            詳細検索
+          .search__bottom__left__form__group
+            .search__bottom__left__form__group__label
+              %i.fas.fa-plus
+              %span キーワードを追加する
+            = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索を追加", class: 'input-left'
+
+
     = render 'post-right'
