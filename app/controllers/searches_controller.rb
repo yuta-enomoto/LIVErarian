@@ -6,6 +6,7 @@ class SearchesController < ApplicationController
     else
       @search_post = Post.ransack(params[:q])
       @posts = @search_post.result.order(date_time: "ASC").page(params[:page])
+      # binding.pry
     end
   end
 

@@ -130,7 +130,7 @@
             &__content {
               margin: 16px 0 0;
               display: inline-block;
-              font-size: 13px;
+              font-size: 14px;
               cursor: pointer;
             }
             &__content  input[type="checkbox"]{
@@ -173,6 +173,14 @@
               border-bottom: 3px solid;
               border-left: 3px solid;
               border-color: $sub-green; /* チェックの色 */
+            }
+
+            .yet {
+              margin: 16px 0px 0 45px;
+            }
+
+            .gone {
+              margin: 16px 0px 0 43px;
             }
           }
 
