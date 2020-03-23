@@ -23,11 +23,19 @@
               %i.fas.fa-plus
               %span キーワードを追加する
             = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索を追加", class: 'input-left'
+
           .search__bottom__left__form__group
             .search__bottom__left__form__group__label
               %i.fas.fa-guitar
               %span LIVE形式から探す
             = f.collection_select :form_id_eq, Form.all, :id, :name, include_blank: 'すべて'
+            %i.fas.fa-chevron-down
+            .back-white
+
+          .search__bottom__left__form__group
+            .search__bottom__left__form__group__label
+              %i.fas.fa-satellite-dish
+              %span LIVE状況
 
 
     = render 'post-right'
