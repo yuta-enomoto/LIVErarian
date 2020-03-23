@@ -21,6 +21,12 @@
       border: 1px solid #d9dadc;
       outline: none;
       font-size: 14px;
+      @include placeholder();
+
+      &:focus {
+        border: 1px solid #a1a1a1;
+        @include placeholder-2();     
+      }
     }
 
     .search-btn {
@@ -32,6 +38,12 @@
       font-size: 16px;
       color: #6a6a6a;
       outline: none;
+
+      &:hover {
+      background-color: #c9c9c9;
+      color: #6d6d6d;
+      transition-duration: .3s;
+      }
     }
   }
 
