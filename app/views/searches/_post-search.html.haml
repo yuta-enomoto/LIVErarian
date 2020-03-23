@@ -1,6 +1,14 @@
-= search_form_for(@q, url: post_search_searches_path)do |f|
-  = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索", class: 'input-default'
+.search
+  .search__top
+    = search_form_for(@q, url: post_search_searches_path)do |f|
+      = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索　（アーティスト名、最寄駅、会場名などから検索）", class: 'input-default'
+      = f.submit "完了", class: "comp-btn"
 
-  = f.submit "完了", class: "comp-btn"
+  .search__bottom
   
-  = render partial: 'post', collection: @posts
+    .search__bottom__left
+      あ
+
+
+    .search__bottom__right
+      = render partial: 'post', collection: @posts
