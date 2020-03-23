@@ -50,7 +50,7 @@
 
   &__bottom {
     width: 1300px;
-    margin: 0 0 0 135px;
+    margin: 15px 0 0 135px;
     display: flex;
 
     &__left {
@@ -96,7 +96,7 @@
       width: 1120px;
 
       &__head {
-        font-size: 17px;
+        font-size: 18px;
         color: black;
         margin: 0 0 30px 20px;
       }
@@ -107,10 +107,20 @@
 
       }
 
-
       &__main {
         display: flex;
         flex-wrap: wrap;
+      }
+
+      &__nil {
+        font-size: 28px;
+        color: black;
+        margin: 0 0 30px 20px;
+      }
+
+      &__text-2 {
+        color: black;
+        margin: 0 0 30px 20px;
       }
     }
   }
