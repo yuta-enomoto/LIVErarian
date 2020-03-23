@@ -12,6 +12,12 @@ class Post < ApplicationRecord
   has_many :like_users, through: :likes, source: :user
 
   validates :date_time, :how_long_id, :form_id,:address, :venue, :station, presence: true
+
+  def self.search(search)
+    return Post.all unless search
+    Post.where('name LIKE(?)', "%#{search}%")
+  end
+
   # validate :date_before_start
 
 
