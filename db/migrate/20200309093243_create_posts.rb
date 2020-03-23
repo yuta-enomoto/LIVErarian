@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :venue,                  null: false
       t.datetime :date_time,            null: false
       t.boolean :status,                null: false, default: true
+      t.boolean :now_on,                null: false, default: true
       t.integer :form_id,               null: false, foreign_key: true
       t.integer :how_long_id,           null: false, foreign_key: true
       t.integer :likes_count
