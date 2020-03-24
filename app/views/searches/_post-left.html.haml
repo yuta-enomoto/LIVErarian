@@ -28,15 +28,15 @@
           %i.fas.fa-satellite-dish
           %span LIVE状況
         .search__bottom__left__form__group__box
-          .search__bottom__left__form__group__box__content.yet
+          .search__bottom__left__form__group__box__content
             %input{type:'checkbox', value: "1", name: "q[status_in]", id: "form-1"}
             %label.lbl{for: 'form-1'}
               開催前
-          .search__bottom__left__form__group__box__content
+          .search__bottom__left__form__group__box__content.now-on
             %input{type:'checkbox', value: "0", name: "q[now_on_in]", id: "form-2"}
             %label.lbl{for: 'form-2'}
               開催中
-          .search__bottom__left__form__group__box__content.gone
+          .search__bottom__left__form__group__box__content
             %input{type:'checkbox', value: "0", name: "q[status_in]", id: "form-3"}
             %label.lbl{for: 'form-3'}
               終了済   
