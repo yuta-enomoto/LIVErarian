@@ -1,7 +1,11 @@
 class SearchesController < ApplicationController
   
   def post_search
-    if params[:q][:status_in].present?
+    if params[:q][:status_in] == '1'
+      @search_post = Post.where(now_on: '1').ransack(params[:q])
+      @posts = @search_post.result.order(date_time: "ASC").page(params[:page])
+
+    elsif params[:q][:status_in].present?
       @search_post = Post.ransack(params[:q])
       @posts = @search_post.result.order(date_time: "ASC").page(params[:page])
 
