@@ -351,15 +351,32 @@
           display: flex;
           justify-content: center;
 
+          .clear-btn {
+            outline: none;
+            cursor: pointer;
+            padding: 13px 17px;
+            background: #aaa;
+            border: 1px solid #aaa;
+            transition-duration: .3s;
+            color: #fff;
+            width: 50%;
+            margin: 0;
+
+            &:hover {
+              background: silver;
+              border: 1px solid silver;
+            }
+          }
+
           .comp-btn {
             outline: none;
             cursor: pointer;
             padding: 13px 37.8px;
-            background: $hover;
-            border: 1px solid $hover;
+            background: #1ed760;
+            border: 1px solid #1ed760;
             transition-duration: .3s;
             color: #fff;
-            width: 125.5px;
+            width: 50%;
             margin: 0;
 
             &:hover {
