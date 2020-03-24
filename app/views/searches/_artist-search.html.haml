@@ -1,0 +1,51 @@
+.search
+  .search__top
+    = search_form_for(@p, url: artist_search_searches_path)do |f|
+      = f.search_field :name_or_active_place_cont, placeholder: "キーワード検索　（アーティスト名、活動拠点などから検索）", class: 'input-default'
+      = button_tag 'search', name: nil, class: "search-btn" do
+        %i.fas.fa-search
+
+
+  .search__bottom
+    .search__bottom__left__which
+      .post-search.re-gray
+        LIVE検索
+      .artist-search.re-green
+        アーティスト検索
+
+    - if params[:q][:name_or_active_place_cont].empty?
+      %p.search__bottom__nil
+        アーティスト一覧
+
+    - elsif @artists.present?
+      .artist-result
+        %h2.search__bottom__right__head
+          = @p.name_or_active_place_cont
+          %span.search__bottom__right__head__text
+            の検索結果
+        .search__bottom__right__number
+          ="1-#{@artists.count}件表示"
+          
+    - else 
+      .artist-result
+        %h2.search__bottom__right__head
+          = @p.name_or_active_place_cont
+          %span.search__bottom__right__head__text
+            の検索結果
+        .search__bottom__right__text-2
+          該当するアーティストが見つかりません。検索条件を変えて、再度お試しください。
+
+
+  - if params[:q][:name_or_active_place_cont].empty?
+    .search__artists.row 
+      = render partial: 'artist', collection: @artists_all
+
+  - elsif @artists.present?
+    .search__artists 
+      = render partial: 'artist', collection: @artists
+
+  - else 
+    .search__artists 
+      = render partial: 'artist', collection: @artists_all
+      
+

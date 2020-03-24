@@ -8,8 +8,11 @@
       = search_form_for(@q, url: post_search_searches_path)do |f|
         = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索　（アーティスト名、最寄駅、会場名などから検索）", class: 'header-input'
         = button_tag 'search', name: nil, id: "header-search" do
-          Find
-
+          post
+      = search_form_for(@p, url: artist_search_searches_path)do |f|
+        = f.search_field :name_or_active_place_cont, placeholder: "キーワード検索　（アーティスト名、活動拠点などから検索）", class: 'header-input'
+        = button_tag 'search', name: nil, id: "header-search-artist" do
+          artist
 
     - if user_signed_in?
       %nav.header__box__container
