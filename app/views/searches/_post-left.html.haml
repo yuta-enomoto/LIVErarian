@@ -38,6 +38,11 @@
         %i.fas.fa-chevron-down.top-right
         %i.fas.fa-chevron-down.bottom-left
         %i.fas.fa-chevron-down.bottom-right
+        %span.year　年
+        %span.year.sita　年
+        %span.date　日
+        %span.date.sita　日
+
         .aff
           %p.from-to 〜
         =f.date_select :date_time_lteq, selected: Date.today + 1.day, class: 'date-select'
@@ -62,6 +67,7 @@
             %label.lbl{for: 'form-3'}
               終了済   
       
-    = f.submit "完了", class: "comp-btn"
+      .search__bottom__left__form__btn
+        = f.submit "完了", class: "comp-btn"
 
 

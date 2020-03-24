@@ -250,6 +250,7 @@
               transform: rotate(90deg);
               font-size: 15px;
               width: 0px;
+              color: #7e7e7e;
             }
           }
 
@@ -325,6 +326,46 @@
             right: 11px;
             top: 117px;
             font-size: 16px; 
+          }
+          .year {
+            position: absolute;
+            font-size: 12.5px;
+            left: 40px;
+            z-index: 2;
+            top: 39.5px;
+          }
+          .date {
+            position: absolute;
+            font-size: 12.5px;
+            right: 44px;
+            z-index: 2;
+            top: 39.5px;
+          }
+          .sita {
+            top: 116.5px;
+          }
+        }
+
+        &__btn {
+          margin: 25px 0 0;
+          display: flex;
+          justify-content: center;
+
+          .comp-btn {
+            outline: none;
+            cursor: pointer;
+            padding: 13px 37.8px;
+            background: $hover;
+            border: 1px solid $hover;
+            transition-duration: .3s;
+            color: #fff;
+            width: 125.5px;
+            margin: 0;
+
+            &:hover {
+              background-color: #17e761;
+              border: 1px solid #17e761;
+            }
           }
         }
       }
