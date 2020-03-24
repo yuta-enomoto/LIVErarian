@@ -17,7 +17,15 @@
           LIVE予定時間
         %h2.posts-box__top__right__text
           = post.how_long.name
-
+        - if post.now_on == false
+          .posts-box-2__top__right__now-on
+            開催中
+        - elsif post.status == false
+          .posts-box-2__top__right__done-live
+            終了済
+        - else 
+          .posts-box-2__top__right__yet
+            開催前
 
     .posts-box__bottom
       .posts-box__bottom__box

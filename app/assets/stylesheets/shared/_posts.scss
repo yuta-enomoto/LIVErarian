@@ -103,6 +103,33 @@
       &__sub {
         color: #919496;
       }
+
+      &__now-on {
+        outline: none;
+        padding: 0px 27px;
+        background: #1ed760;
+        color: #fff;
+        width: 100px;
+        margin: 0;
+      }
+
+      &__done-live {
+        outline: none;
+        padding: 0px 27px;
+        background: hsl(0, 93%, 62%);
+        color: #fff;
+        width: 100px;
+        margin: 0;
+      }
+
+      &__yet {
+        outline: none;
+        padding: 0px 27px;
+        background: #aaa;
+        color: #fff;
+        width: 100px;
+        margin: 0;
+      }
     }
   }
 
