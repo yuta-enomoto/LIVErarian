@@ -395,7 +395,7 @@
         &__btn {
           margin: 25px 0 0;
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
 
           .clear-btn {
             outline: none;
@@ -405,7 +405,7 @@
             border: 1px solid #aaa;
             transition-duration: .3s;
             color: #fff;
-            width: 50%;
+            width: 45%;
             margin: 0;
 
             &:hover {
@@ -422,7 +422,7 @@
             border: 1px solid #1ed760;
             transition-duration: .3s;
             color: #fff;
-            width: 50%;
+            width: 45%;
             margin: 0;
 
             &:hover {
