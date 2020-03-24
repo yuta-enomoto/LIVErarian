@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def set_ransack_artist
     @artists_all = Artist.all
-    @p = Artist.ransack(params[:p])
+    @p = Artist.ransack(params[:q])
   end
 
 

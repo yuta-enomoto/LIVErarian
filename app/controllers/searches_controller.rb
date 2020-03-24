@@ -17,7 +17,7 @@ class SearchesController < ApplicationController
 
 
   def artist_search
-    @search_artist = Artist.ransack(params[:p])
+    @search_artist = Artist.ransack(params[:q])
     @artists = @search_artist.result.order(id: "DESC").page(params[:page])
   end
 
