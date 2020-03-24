@@ -28,7 +28,7 @@
           %i.fas.fa-calendar-alt
           %span 開催日時
         =f.date_select :date_time_gteq, {}, class: 'date-select'
-        =f.date_select :date_time_lteq, {}, class: 'date-select'
+        =f.date_select :date_time_lteq, selected: Date.today + 1.day, class: 'date-select'
 
 
       .search__bottom__left__form__group
