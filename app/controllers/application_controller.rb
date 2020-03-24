@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_artist
   before_action :set_ransack
+  before_action :set_ransack_artist
   before_action :now_on_change
   before_action :status_change
 
@@ -17,6 +18,12 @@ class ApplicationController < ActionController::Base
   def set_ransack
     @posts_all = Post.where(status: '1')
     @q = Post.ransack(params[:q])
+  end
+
+
+  def set_ransack_artist
+    @artists_all = Artist.all
+    @p = Artist.ransack(params[:p])
   end
 
 
