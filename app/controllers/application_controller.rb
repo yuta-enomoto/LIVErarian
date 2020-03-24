@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   def now_on_change
     30.times do
-      @now_on = Post.order(date_time: "ASC").find_by(now_on: '1')
+      @now_on = Post.order(date_time: "ASC").find_by(status: '1', now_on: '1')
       @time = DateTime.now.to_s(:db)
       if @now_on.present?
         if Rails.env.production?
@@ -55,6 +55,8 @@ class ApplicationController < ActionController::Base
         if Rails.env.production?
           if @status.how_long_id == 1
             if @status.date_time + 30.minute < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -64,6 +66,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 2
             if @status.date_time + 1.hour < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -73,6 +77,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 3
             if @status.date_time + 1.hour + 30.minute < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -82,6 +88,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 4
             if @status.date_time + 2.hour < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -91,6 +99,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 5
             if @status.date_time + 2.hour + 30.minute < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -100,6 +110,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 6
             if @status.date_time + 3.hour < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -109,6 +121,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 7
             if @status.date_time + 3.hour + 30.minute < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -118,6 +132,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 8
             if @status.date_time + 4.hour < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -128,6 +144,8 @@ class ApplicationController < ActionController::Base
         else
           if @status.how_long_id == 1
             if @status.date_time + 9.hour + 30.minute < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -137,6 +155,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 2
             if @status.date_time + 10.hour < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -146,6 +166,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 3
             if @status.date_time + 10.hour + 30.minute < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -155,6 +177,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 4
             if @status.date_time + 11.hour < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -164,6 +188,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 5
             if @status.date_time + 11.hour + 30.minute < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -173,6 +199,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 6
             if @status.date_time + 12.hour < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -182,6 +210,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 7
             if @status.date_time + 12.hour + 30.minute < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
@@ -191,6 +221,8 @@ class ApplicationController < ActionController::Base
           end
           if @status.how_long_id == 8
             if @status.date_time + 13.hour < @time
+              @status.now_on = '1'
+              @status.save
               @status.status = '0'
               if @status.save
                 @like_delete = Like.where(post_id: @status.id)
