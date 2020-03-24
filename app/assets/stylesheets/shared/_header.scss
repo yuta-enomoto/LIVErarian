@@ -30,6 +30,10 @@
       }
     }
 
+    &__search-hidden {
+      visibility: hidden;
+    }
+
     &__container {
 
       &__lists {
@@ -49,6 +53,17 @@
             display: inline-block;
             height: 16px;
             width: 1px;
+          }
+
+          &__find {
+            font-size: 17px;
+            font-weight: bold;
+            color: $wh;
+            cursor: pointer;
+
+            &:hover {
+              color:$green;
+            }
           }
 
           a {

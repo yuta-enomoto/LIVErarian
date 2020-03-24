@@ -4,6 +4,11 @@
       = link_to root_path do
         %span.left LIVE
         %span.right rarian
+    .header__box__search-hidden
+      = search_form_for(@q, url: post_search_searches_path)do |f|
+        = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索　（アーティスト名、最寄駅、会場名などから検索）", class: 'header-input'
+        = button_tag 'search', name: nil, id: "header-search" do
+          Find
 
 
     - if user_signed_in?
@@ -12,9 +17,11 @@
           %li.header__box__container__lists__list
             = link_to root_path do
               Top
+              
           %li.header__box__container__lists__list
-            = link_to '#' do
+            .header__box__container__lists__list__find
               Find
+
           %li.header__box__container__lists__list
             - if @artist_info.present? 
               = link_to new_post_path do
@@ -44,10 +51,10 @@
       %nav.header__box__container
         %ul.header__box__container__lists
           %li.header__box__container__lists__list
-            = link_to '#' do
+            = link_to root_path do
               Top
           %li.header__box__container__lists__list
-            = link_to '#' do
+            .header__box__container__lists__list__find
               Find
           %li.header__box__container__lists__list
             = link_to new_post_path do

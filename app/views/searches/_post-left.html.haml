@@ -1,0 +1,74 @@
+.search__bottom__left
+  = search_form_for(@q, url: post_search_searches_path)do |f|
+    .search__bottom__left__which
+      .post-search
+        LIVE検索
+      = link_to artist_search_searches_path, class: 'artist-search' do
+        アーティスト検索
+
+    .search__bottom__left__form
+      %h2.search__bottom__left__form__title
+        詳細検索
+      .search__bottom__left__form__group
+        .search__bottom__left__form__group__label
+          %i.fas.fa-plus
+          %span キーワードを追加する
+        = f.search_field :artist_name_or_station_or_venue_or_address_cont, placeholder: "キーワード検索を追加", class: 'input-left'
+
+      .search__bottom__left__form__group
+        .search__bottom__left__form__group__label
+          %i.fas.fa-guitar
+          %span LIVE形式から探す
+        = f.collection_select :form_id_eq, Form.all, :id, :name, include_blank: 'すべて'
+        %i.fas.fa-chevron-down
+        .back-white
+
+      .search__bottom__left__form__group
+        .search__bottom__left__form__group__label
+          %i.fas.fa-calendar-alt
+          %span 開催日時
+        =f.date_select :date_time_gteq, {}, class: 'date-select'
+        .back-white-2
+        .back-white-2.second
+        .back-white-2.third
+        .back-white-3
+        .back-white-3.second
+        .back-white-3.third
+        %i.fas.fa-chevron-down.top-left
+        %i.fas.fa-chevron-down.top-right
+        %i.fas.fa-chevron-down.bottom-left
+        %i.fas.fa-chevron-down.bottom-right
+        %span.year　年
+        %span.year.sita　年
+        %span.date　日
+        %span.date.sita　日
+
+        .aff
+          %p.from-to 〜
+        =f.date_select :date_time_lteq, selected: Date.today + 1.day, class: 'date-select'
+
+
+
+      .search__bottom__left__form__group
+        .search__bottom__left__form__group__label
+          %i.fas.fa-satellite-dish
+          %span LIVE状況
+        .search__bottom__left__form__group__box
+          .search__bottom__left__form__group__box__content
+            %input{type:'checkbox', value: "1", name: "q[status_in]", id: "form-1"}
+            %label.lbl{for: 'form-1'}
+              開催前
+          .search__bottom__left__form__group__box__content.now-on
+            %input{type:'checkbox', value: "0", name: "q[now_on_in]", id: "form-2"}
+            %label.lbl{for: 'form-2'}
+              開催中
+          .search__bottom__left__form__group__box__content
+            %input{type:'checkbox', value: "0", name: "q[status_in]", id: "form-3"}
+            %label.lbl{for: 'form-3'}
+              終了済   
+      
+      .search__bottom__left__form__btn
+        = f.submit "クリア", type: :reset, class: "clear-btn"
+        = f.submit "完了", class: "comp-btn"
+
+

@@ -86,3 +86,4 @@ gem 'google-analytics-rails'
 gem "gmaps4rails"
 gem "geocoder"
 gem 'gon'
+gem 'ransack'

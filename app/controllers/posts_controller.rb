@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   before_action :artist_id, only: [:edit, :create, :update]
   before_action :count_post, only: [:show_post, :show_house]
   before_action :gon_set, only: [:show, :done_show, :show_post, :show_house]
-  after_action :status_change, only: [:create, :update, :destroy,:destroy_post, :done_destroy]
 
   def show
   end
@@ -35,7 +34,6 @@ class PostsController < ApplicationController
     @artist = Artist.find_by(user_id: current_user.id)
     @post = Post.new(post_params)
     if @post.save
-      status_change
       redirect_status
     else
       render :new
@@ -52,7 +50,6 @@ class PostsController < ApplicationController
 
   def update
     if current_user.id == @post.user_id && @post.update(post_params)
-      status_change
       redirect_status
     else
       render :edit
@@ -130,9 +127,9 @@ class PostsController < ApplicationController
 
 
   def redirect_status
-    if @status.status == true
+    if @post.status == true
       redirect_to post_path(@post.id)
-    elsif @status.status == false
+    elsif @post.status == false
       redirect_to done_show_post_path(@post.id)
     end
   end
@@ -150,30 +147,4 @@ class PostsController < ApplicationController
     gon.venue = @post.venue
   end
 
-
-  def status_change 
-    30.times do
-      @status = Post.order(date_time: "ASC").find_by(status: '1')
-      @time = DateTime.now.to_s(:db)
-      if @status.present?
-        if Rails.env.production?
-          if @status.date_time < @time
-            @status.status = '0'
-            if @status.save
-              @like_delete = Like.where(post_id: @status.id)
-              @like_delete.delete_all
-            end
-          end
-        else
-          if @status.date_time + 9.hour < @time
-            @status.status = '0'
-            if @status.save
-              @like_delete = Like.where(post_id: @status.id)
-              @like_delete.delete_all
-            end
-          end
-        end
-      end
-    end
-  end
 end

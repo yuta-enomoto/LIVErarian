@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_142615) do
     t.string "venue", null: false
     t.datetime "date_time", null: false
     t.boolean "status", default: true, null: false
+    t.boolean "now_on", default: true, null: false
     t.integer "form_id", null: false
     t.integer "how_long_id", null: false
     t.integer "likes_count"
