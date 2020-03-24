@@ -54,6 +54,10 @@
     margin: 15px 0 0 135px;
     display: flex;
 
+    .artist-result {
+      margin: 0 0 0 40px;
+    }
+
     &__nil {
       font-size: 28px;
       color: black;
@@ -88,6 +92,7 @@
           transition-duration: .3s;
           color: #fff;
           width: 135.5px;
+          height: 48px;
           margin: 0;
 
           &:hover {
@@ -122,6 +127,7 @@
           transition-duration: .3s;
           color: #fff;
           width: 135.5px;
+          height: 48px;
           margin: 0;
 
           &:hover {
@@ -464,6 +470,11 @@
   &__artists {
     display: flex;
     flex-wrap: wrap;
-    padding: 60px 85px;
+    padding: 30px 85px;
+  }
+
+  .row {
+    padding: 72px 85px;
+
   }
 }
