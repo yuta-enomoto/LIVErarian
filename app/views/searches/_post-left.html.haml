@@ -25,6 +25,14 @@
 
       .search__bottom__left__form__group
         .search__bottom__left__form__group__label
+          %i.fas.fa-calendar-alt
+          %span 開催日時
+        =f.date_select :date_time_gteq, {}, class: 'date-select'
+        =f.date_select :date_time_lteq, {}, class: 'date-select'
+
+
+      .search__bottom__left__form__group
+        .search__bottom__left__form__group__label
           %i.fas.fa-satellite-dish
           %span LIVE状況
         .search__bottom__left__form__group__box
