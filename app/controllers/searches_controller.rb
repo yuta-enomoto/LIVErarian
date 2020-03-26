@@ -1,4 +1,7 @@
 class SearchesController < ApplicationController
+
+  def index
+  end
   
   def post_search
     if params[:q][:status_in] == '1'
