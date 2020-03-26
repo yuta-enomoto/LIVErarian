@@ -27,6 +27,8 @@ function initMap() {
         alert('Geolocation failed!');
         return;
       });
+
+      
     }
 
     else {
