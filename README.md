@@ -59,13 +59,13 @@ LIVE予定時間の2時間が経つと「開催済」に自動でLIVE状況が�
 - Jquery
 - haml,sass記法
 
-##　開発環境
+## 開発環境
 - Rubyバージョン　2.5.1
 - Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
 ## 課題や今後実装したい機能
 
-###　課題
+### 課題
 - LIVE検索フォームで検索する度にチェックボックスが外れてしまう。
 - 2月31日など、存在しない日を選択できてしまう。
 - 緯度、経度の座標取得が10mほどずれる場合がある。
@@ -82,8 +82,7 @@ LIVE予定時間の2時間が経つと「開催済」に自動でLIVE状況が�
 
 # DB設計
 
-<img width="906" alt="erd" src="https://user-images.githubusercontent.com/59691815/77843067-66cdf300-71d4-11ea-9ff0-f112963143d1.png">
-
+<img width="906" alt="er" src="https://user-images.githubusercontent.com/59691815/77843162-684beb00-71d5-11ea-8e1e-cbdc4be081c8.png">
 
 ## usersテーブル
 |Column|Type|Options|
