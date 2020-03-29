@@ -37,7 +37,31 @@
 という思いでこの度制作しました。
 
 ## DEMO
+
+- トップページ　
+ 新着アーティストと、その日に行われるライブ情報が表示されます。
+ ![18 177 204 238_](https://user-images.githubusercontent.com/59691815/77846101-840fbb00-71ee-11ea-8529-321a75b1e3f3.png)
+
+
+- LIVE情報の投稿機能
+ 必須項目を全て記入しページ下部にある投稿ボタンを押すと投稿できます。  
+ 記入した住所から位置情報の緯度経度を取得してgoogle mapで表示します。  
+ 投稿はアーティスト登録をしたユーザーのみが行えます。
 [![Image from Gyazo](https://i.gyazo.com/1727d99d38791f774502a2f58c92471d.gif)](https://gyazo.com/1727d99d38791f774502a2f58c92471d)
+
+- 投稿の削除機能
+ 削除ボタンを押すと画面上部にスクロールされ、  
+ 確認画面が表示されます。  
+ 削除が完了するまで一部の画面の操作は無効化され画面が暗くなります。  
+ 投稿の削除はその投稿をしたユーザーのみが行えます。
+![be345884607dbf7ff65edaf117e644a3](https://user-images.githubusercontent.com/59691815/77846075-604c7500-71ee-11ea-888a-3f5b81f42cd0.gif)
+
+- 検索機能
+ アーティスト名、駅名、会場名、住所からキーワード検索が行えます。  
+  また、日付での絞り込みやライブ状況での絞り込み等が行えます。
+![18 177 204 238_searches_post_search_utf8=%E2%9C%93 q%5Bartist_name_or_station_or_venue_or_address_cont%5D=%E6%96%B0%E5%AE%BF](https://user-images.githubusercontent.com/59691815/77846131-d3ee8200-71ee-11ea-99d9-00c11b4b6b06.png)
+
+
 
 ## 工夫したポイント
 投稿したLVIEの状況を「**開催前**」「**開催中**」「**開催済**」に分け、  
