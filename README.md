@@ -82,6 +82,9 @@ LIVE予定時間の2時間が経つと「開催済」に自動でLIVE状況が�
 
 # DB設計
 
+<img width="906" alt="erd" src="https://user-images.githubusercontent.com/59691815/77843067-66cdf300-71d4-11ea-9ff0-f112963143d1.png">
+
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -167,5 +170,3 @@ LIVE予定時間の2時間が経つと「開催済」に自動でLIVE状況が�
 ### Association
 - belongs_to :post, counter_cache: :likes_count
 - belongs_to :user
-
-<img width="772" alt="db" src="https://user-images.githubusercontent.com/59691815/77842991-94666c80-71d3-11ea-87f4-203995e876a3.png">
