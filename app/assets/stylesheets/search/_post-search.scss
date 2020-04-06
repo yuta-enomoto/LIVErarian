@@ -137,6 +137,25 @@
         }
       }
 
+      &__locate {
+        margin: 40px 0 0;
+
+        a {
+          outline: none;
+          cursor: pointer;
+          padding: 16px 71.8px;
+          background: #575757;
+          border: 1px solid #575757;
+          transition-duration: .3s;
+          color: #fff;
+
+          &:hover {
+            background: #6b6b6b;
+            border: 1px solid #6b6b6b;
+          }
+        }
+      }
+
       &__form {
         background-color: rgba(245, 245, 245, 0.897);
         margin: 40px 0 100px 0;
